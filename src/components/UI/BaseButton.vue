@@ -1,7 +1,7 @@
 <template>
-	<div class="base-button">
+	<button class="base-button">
 		<slot></slot>
-	</div>
+	</button>
 </template>
 
 <script>
@@ -14,9 +14,6 @@ export default {
 .base-button
 {
 	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: fit-content;
 	padding: 0 30px;
 	background: #FC4442;
 	border-radius: 100px;
@@ -26,6 +23,7 @@ export default {
 	line-height: 38px;
 	cursor: pointer;
 	transition: all 0.2s ease-in-out;
+	border: none;
 	&:hover
 	{
 		background: #FFFFFF;
