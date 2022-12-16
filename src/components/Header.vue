@@ -21,13 +21,19 @@
 					<router-link to="#">Контакты</router-link>
 				</li>
 			</ul>
+			<div class="header__rigth">
+				<img src="@/assets/img/svg/header/searchIcon.svg" alt="">
+				<img src="@/assets/img/svg/header/favoritIcon.svg" alt="">
+			</div>
 		</div>
 		<div class="header__bottom">
-
-		</div>
-		<div class="header__rigth">
-			<img src="@/assets/img/svg/header/searchIcon.svg" alt="">
-			<img src="@/assets/img/svg/header/favoritIcon.svg" alt="">
+			<base-button class="header__catalog-btn">
+				<input id="header__toggle" type="checkbox"/>
+				<label class="header__btn" for="header__toggle">
+					<span></span>
+				</label>
+				Каталог
+			</base-button>
 		</div>
 	</div>
 </template>
@@ -35,6 +41,8 @@
 <script>
 export default {
 	name: "Header",
+	components: {},
+
 };
 </script>
 
@@ -43,16 +51,9 @@ export default {
 {
 	display: flex;
 	justify-content: space-between;
-	align-items: center;
 	padding-top: 20px;
 	> img{cursor: pointer;}
 }
-//.header__top
-//{
-//	display: flex;
-//	align-items: center;
-//	flex: 1 0 100%;
-//}
 .header__rigth
 {
 	display: flex;
@@ -64,6 +65,77 @@ export default {
 	position: relative;
 	left: 12px;
 	> span{display: none}
+}
+.header__top
+{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	flex-basis: 100%;
+	margin-bottom: 38px;
+}
+.header__catalog-btn{position: relative;}
+/* скрываем чекбокс */
+#header__toggle {
+  opacity: 0;
+}
+
+/* стилизуем кнопку */
+.header__btn
+{
+	display: flex; /* используем flex для центрирования содержимого */
+	align-items: center; /* центрируем содержимое кнопки */
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	width: 26px;
+	height: 26px;
+	cursor: pointer;
+	z-index: 1;
+}
+
+/* добавляем "гамбургер" */
+.header__btn > span,
+.header__btn > span::before,
+.header__btn > span::after
+{
+	display: block;
+	position: absolute;
+	width: 100%;
+	height: 2px;
+	background-color: #616161;
+}
+
+.header__btn > span::before
+{
+	content: '';
+	top: -8px;
+}
+
+.header__btn > span::after
+{
+	content: '';
+	top: 8px;
+}
+
+#header__toggle:checked ~ .header__btn > span{transform: rotate(45deg);}
+
+#header__toggle:checked ~ .header__btn > span::before
+{
+	top: 0;
+	transform: rotate(0);
+}
+
+#header__toggle:checked ~ .header__btn > span::after
+{
+	top: 0;
+	transform: rotate(90deg);
+}
+
+#header__toggle:checked ~ .header__box
+{
+	visibility: visible;
+	left: 0;
 }
 .header__phone{display: none;}
 .header__info{display: none;}
@@ -91,7 +163,11 @@ export default {
 }
 @media screen and (min-width: 1024px)
 {
-	.header{margin-bottom: 36px;}
+	.header
+	{
+		flex-direction: column;
+		margin-bottom: 36px;
+	}
 	.header__burger{display: none;}
 	.header__rigth{display: none;}
 	.header__logo
@@ -107,6 +183,7 @@ export default {
 		right: 80px;
 		> a
 		{
+			margin-bottom: 8px;
 			font-size: 16px;
 			line-height: 19px;
 			font-weight: $medium;
