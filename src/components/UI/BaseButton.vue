@@ -13,7 +13,6 @@ export default {
 <style lang="scss">
 .base-button
 {
-	display: flex;
 	padding: 0 30px;
 	background: #FC4442;
 	border-radius: 100px;
