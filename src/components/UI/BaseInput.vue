@@ -11,7 +11,8 @@
 <script>
 export default {
 	name: "BaseInput",
-	props: {
+	props:
+	{
 		placeholder:
 		{
 			type: String,

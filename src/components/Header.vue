@@ -7,9 +7,11 @@
 					<span></span>
 				</label>
 			</div>
-			<div class="header__logo">
-				<img src="@/assets/img/svg/header/mainLogo.svg" alt="">
-				<span>Вся мебель в одном месте</span>
+			<div>
+				<router-link to="/" class="header__logo">
+					<img src="@/assets/img/svg/header/mainLogo.svg" alt="">
+					<span>Вся мебель в одном месте</span>
+				</router-link>
 			</div>
 			<div class="header__phone">
 				<a href="tel:8 (800) 600-08-88">8 (800) 600-08-88</a>
@@ -32,13 +34,20 @@
 			</div>
 		</div>
 		<div class="header__bottom">
-			<button class="header__catalog-btn">
-				<span ></span>
+			<button
+				class="header__catalog-btn"
+				:class="{'header__catalog-btn--active': isCatalogOpen}"
+				@click="openCatalogMenu"
+			>
+				<div class="header__catalog-burger" ref="burger">
+					<span></span>
+					<img src="@/assets/img/svg/header/burgerClose.svg" alt="">
+				</div>
 				Каталог
 			</button>
-			<label class="header__bottom-input">
+			<label class="header__bottom-label">
 				<img src="@/assets/img/svg/header/searchIcon.svg" alt="">
-				<base-input placeholder="Поиск"></base-input>
+				<base-input class="header__bottom-input" :placeholder="placeholderText"></base-input>
 			</label>
 			<div class="header__bottom-profile">
 				<img src="@/assets/img/svg/header/profile.svg" alt="">
@@ -53,18 +62,28 @@
 </template>
 
 <script>
-import {ref} from "vue";
+ import {ref, onMounted} from "vue";
 export default {
 	name: "Header",
 	components: {},
-	setup ()
+	setup (props, context)
 	{
-		const placeholderText =  ref("Поиск");
+		const placeholderText =  'Поиск';
+		let isCatalogOpen = ref(false);
+		let burger = ref(null);
+
+		function openCatalogMenu ()
+		{
+			isCatalogOpen.value = !isCatalogOpen.value;
+		}
+
 		return {
+			openCatalogMenu,
 			placeholderText,
+			isCatalogOpen,
+			burger,
 		};
 	},
-
 };
 </script>
 
@@ -111,7 +130,7 @@ export default {
 	position: fixed;
 	top: 20px;
 	left: 20px;
-	width: 16px;
+	width: 16.5px;
 	height: 26px;
 	cursor: pointer;
 	z-index: 1;
@@ -127,18 +146,19 @@ export default {
 	width: 100%;
 	height: 2px;
 	background-color: #616161;
+	border-radius: 2px;
 }
 
 .header__btn > span::before
 {
 	content: '';
-	top: -8px;
+	top: -6px;
 }
 
 .header__btn > span::after
 {
 	content: '';
-	top: 8px;
+	top: 6px;
 }
 
 #header__toggle:checked ~ .header__btn > span{transform: rotate(45deg);}
@@ -240,17 +260,78 @@ export default {
 	.header__catalog-btn
 	{
 		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		max-width: 170px;
+		width: 100%;
 		position: relative;
-		padding: 0 30px;
-		background: #FC4442;
+		padding: 0 32px;
+		background: $btn-color;
 		border-radius: 100px;
 		color: $white;
-		font-size: 13px;
 		font-weight: 500;
+		font-size: 18px;
 		line-height: 52px;
 		cursor: pointer;
 		transition: all 0.2s ease-in-out;
 		border: none;
+		&:hover
+		{
+			background: #FFFFFF;
+			color: $btn-color;
+			outline: 1px solid $btn-color;
+			.header__catalog-burger
+			{
+				span,
+				span::before,
+				span::after
+				{
+					background-color: $btn-color;
+				}
+			}
+		}
+		&--active
+		{
+			background: #FFFFFF;
+			color: $btn-color;
+			outline: 1px solid $btn-color;
+			.header__catalog-burger
+			{
+				span,
+				span::before,
+				span::after
+				{display: none;}
+				img{display: flex;}
+			}
+		}
+	}
+	.header__catalog-burger
+	{
+		width: 100%;
+		display: flex;
+		cursor: pointer;
+		span,
+		span:after,
+		span:before
+		{
+			display: block;
+			position: absolute;
+			width: 16.5px;
+			height: 2px;
+			background-color: #FFFFFF;
+			border-radius: 2px;
+		}
+		span:before
+		{
+			content: '';
+			top: -6px;
+		}
+		span:after
+		{
+			content: '';
+			top: 6px;
+		}
+		img{display: none;}
 	}
 	.header__btn
 	{
@@ -265,7 +346,7 @@ export default {
 		justify-content: space-between;
 		gap: 26px;
 	}
-	.header__bottom-input
+	.header__bottom-label
 	{
 		position: relative;
 		flex: 1;
@@ -285,7 +366,8 @@ export default {
 			font-weight: 400;
 			font-size: 16px;
 			line-height: 19px;
-			color: rgba(45, 45, 45, 0.5)
+			color: rgba(45, 45, 45, 0.5);
+			&:focus{border-color:  $btn-color;}
 		}
 	}
 	.header__bottom-profile,
