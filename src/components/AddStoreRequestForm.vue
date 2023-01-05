@@ -1,29 +1,32 @@
 <template>
-	<div class="add-store-reqest-form container">
-		<div>
-			<p>Отправить заявку на добавление магазина</p>
-			<span>Подключение к макретплейсю бесплатное</span>
-			<form @submit.prevent="submitHandler">
-				<label class="add-store-reqest-form__label">
-					<input v-model="phoneNumber" type="tel" v-mask="'+7 ### ###-##-##'"/>
-					<span v-if="error">
-						{{ error }}
-					</span>
-				</label>
-				<BaseButton class="add-store-reqest-form__btn" type="submit">Отправить</BaseButton>
-			</form>
-		</div>
-		<div>
-			<img src="@/assets/img/svg/addStore.svg" alt="">
+	<div class="container">
+		<div class="add-store-reqest-form">
+			<div>
+				<p>Отправить заявку на добавление магазина</p>
+				<span>Подключение к макретплейсю бесплатное</span>
+				<form @submit.prevent="submitHandler">
+					<label class="add-store-reqest-form__label">
+						<input v-model="phoneNumber" type="tel" v-maska="'+7(###)-###-##-##'"/>
+						<span class="add-store-reqest-form__error" v-if="error">
+							{{ error }}
+						</span>
+					</label>
+					<BaseButton class="add-store-reqest-form__btn" type="submit">Отправить</BaseButton>
+				</form>
+			</div>
+			<div>
+				<img src="@/assets/img/svg/addStore.svg" alt="">
+			</div>
 		</div>
 	</div>
 </template>
 
 <script>
-import { ref } from "vue";
+import { ref, defineComponent } from "vue";
 import BaseButton from "@/components/UI/BaseButton";
 import BaseInput from "@/components/UI/BaseInput";
-export default {
+import maska from "maska";
+export default defineComponent({
 	name: "AddStoreRequestForm",
 	components: {BaseInput, BaseButton},
 	setup (props, context)
@@ -47,7 +50,10 @@ export default {
 			error,
 		};
 	},
-};
+	directives: {
+		maska: maska,
+	}
+});
 </script>
 
 <style lang="scss">
@@ -97,6 +103,20 @@ export default {
 		border-radius: 100px;
 		&:focus{border-color:  $btn-color;}
 	}
+	.add-store-reqest-form__error
+	{
+		position: absolute;
+		margin: 0;
+		top: 42px;
+		left: 0;
+		padding: 0 16px;
+		line-height: 18px;
+		font-family: $baseFont;
+		font-style: normal;
+		font-weight: $regular;
+		font-size: 10px;
+		color: red;
+	}
 }
 .add-store-reqest-form__btn
 {
@@ -108,7 +128,7 @@ export default {
 {
 	.add-store-reqest-form
 	{
-		padding: 23px 16px 28px 22px;
+		padding: 23px 0 28px 24px;
 		p
 		{
 			font-size: 26px;

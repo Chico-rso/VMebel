@@ -1,10 +1,9 @@
 <template>
-	<div>
-		<Header/>
+	<Header />
+	<main>
 		<AddStoreRequestForm />
-		<router-view/>
-		<Footer/>
-	</div>
+	</main>
+	<Footer />
 </template>
 
 <script>
@@ -28,5 +27,4 @@ name: "MainPage",
 </script>
 
 <style lang="scss">
-
 </style>

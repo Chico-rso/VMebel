@@ -1,22 +1,21 @@
-import { createApp } from 'vue'
-import App from './App.vue'
-import router from './router'
-import components from '@/components/UI/ui.js'
+import {createApp} from "vue";
+import App from "./App.vue";
+import router from "./router";
+import components from "@/components/UI/ui.js";
 import maska from "maska";
 
 
-
 const app = createApp(App);
-app.use(maska);
 app.use(router);
+app.use(maska);
 
-app.directive('v-mask', maska);
 
-components.forEach(component => {
+components.forEach(component =>
+{
 	app.component(component.name, component);
 });
 
-app.mount('#app')
+app.mount("#app");
 
 
 
