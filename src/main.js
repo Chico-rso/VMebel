@@ -2,12 +2,11 @@ import {createApp} from "vue";
 import App from "./App.vue";
 import router from "./router";
 import components from "@/components/UI/ui.js";
-import maska from "maska";
+import { vMaska } from "maska";
 
 
-const app = createApp(App);
+const app = createApp(App).directive("maska", vMaska);
 app.use(router);
-app.use(maska);
 
 
 components.forEach(component =>

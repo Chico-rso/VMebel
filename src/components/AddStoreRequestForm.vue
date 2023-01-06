@@ -6,7 +6,7 @@
 				<span>Подключение к макретплейсю бесплатное</span>
 				<form @submit.prevent="submitHandler">
 					<label class="add-store-reqest-form__label">
-						<input v-model="phoneNumber" type="tel" v-maska="'+7(###)-###-##-##'"/>
+						<input v-model="phoneNumber" type="tel" v-maska data-maska="+7(###)-###-##-##"/>
 						<span class="add-store-reqest-form__error" v-if="error">
 							{{ error }}
 						</span>
@@ -25,7 +25,6 @@
 import { ref, defineComponent } from "vue";
 import BaseButton from "@/components/UI/BaseButton";
 import BaseInput from "@/components/UI/BaseInput";
-import maska from "maska";
 export default defineComponent({
 	name: "AddStoreRequestForm",
 	components: {BaseInput, BaseButton},
@@ -33,6 +32,8 @@ export default defineComponent({
 	{
 		const phoneNumber = ref('');
 		const error = ref('');
+
+
 		const submitHandler = () =>
 		{
 			if (phoneNumber.value.length < 11)
@@ -50,9 +51,6 @@ export default defineComponent({
 			error,
 		};
 	},
-	directives: {
-		maska: maska,
-	}
 });
 </script>
 
