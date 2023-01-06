@@ -1,18 +1,9 @@
 <template>
-		<router-view/>
+	<router-view/>
 </template>
 
-<script>
-import {ref, defineComponent} from "vue";
-
-export default defineComponent( {
-	name: "App",
-	components:{},
-	setup (props, context)
-	{
-		return {};
-	},
-});
+<script setup>
+import { RouterView } from 'vue-router'
 </script>
 <style lang="scss">
 #app
