@@ -6,7 +6,13 @@
 				<span>Подключение к макретплейсю бесплатное</span>
 				<form @submit.prevent="submitHandler">
 					<label class="add-store-reqest-form__label">
-						<input v-model="phoneNumber" type="tel" v-maska data-maska="+7(###)-###-##-##"/>
+						<input
+							v-model="phoneNumber"
+							type="tel"
+							v-maska
+							data-maska="+7(###)-###-##-##"
+							placeholder="+7"
+						/>
 						<span class="add-store-reqest-form__error" v-if="error">
 							{{ error }}
 						</span>
@@ -61,6 +67,7 @@ export default defineComponent({
 	border-radius: 10px;
 	text-align: center;
 	padding: 23px 16px 28px 22px;
+	margin-bottom: 21px;
 	p
 	{
 		margin-bottom: 14px;
@@ -99,7 +106,9 @@ export default defineComponent({
 		background: #FFFFFF;
 		border: 1px solid #EAEAEA;
 		border-radius: 100px;
+		color: $grey;
 		&:focus{border-color:  $btn-color;}
+		&::placeholder{color: $input;}
 	}
 	.add-store-reqest-form__error
 	{
@@ -127,6 +136,7 @@ export default defineComponent({
 	.add-store-reqest-form
 	{
 		padding: 23px 0 28px 24px;
+		margin-bottom: 40px;
 		p
 		{
 			font-size: 26px;
