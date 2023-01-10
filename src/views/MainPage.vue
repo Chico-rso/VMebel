@@ -10,8 +10,8 @@
 <script setup>
 import Header from "@/components/Header.vue";
 import Footer from "@/components/Footer.vue";
-import AddStoreRequestForm from "@/components/AddStoreRequestForm.vue";
-import DeliveryBenefit from "@/components/DeliveryBenefit.vue";
+import AddStoreRequestForm from "@/components/mainPage/AddStoreRequestForm.vue";
+import DeliveryBenefit from "@/components/mainPage/DeliveryBenefit.vue";
 </script>
 
 <style lang="scss">
