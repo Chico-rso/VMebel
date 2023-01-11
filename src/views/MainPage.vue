@@ -1,17 +1,11 @@
 <template>
-	<Header />
-	<main>
-		<AddStoreRequestForm />
-	</main>
-	<DeliveryBenefit />
-	<Footer />
+	<AddStoreRequestForm />
+	<ProductsList />
 </template>
 
 <script setup>
-import Header from "@/components/Header.vue";
-import Footer from "@/components/Footer.vue";
 import AddStoreRequestForm from "@/components/mainPage/AddStoreRequestForm.vue";
-import DeliveryBenefit from "@/components/mainPage/DeliveryBenefit.vue";
+import ProductsList from "@/components/product/ProductsList.vue";
 </script>
 
 <style lang="scss">

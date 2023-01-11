@@ -121,17 +121,17 @@ export default {
 	margin-bottom: 38px;
 }
 .header__catalog-btn{position: relative;}
-/* скрываем чекбокс */
+
 #header__toggle {
   opacity: 0;
 }
 
-/* стилизуем кнопку */
+
 .header__btn
 {
-	display: flex; /* используем flex для центрирования содержимого */
-	align-items: center; /* центрируем содержимое кнопки */
-	position: fixed;
+	display: flex;
+	align-items: center;
+	position: absolute;
 	top: 20px;
 	left: 20px;
 	width: 16.5px;
