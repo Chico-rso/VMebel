@@ -22,8 +22,10 @@
 
 <script setup>
 import { ref, defineComponent } from "vue";
+
 const email = ref('');
 const error = ref('');
+
 const submitEmail = () =>
 {
 	if (email.value.length < 1)

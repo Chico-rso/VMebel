@@ -1,7 +1,7 @@
-<template>
+<template v-cloak>
 	<Header />
 	<main>
-		<router-view/>
+		<router-view />
 	</main>
 	<DeliveryBenefit />
 	<Footer />
@@ -23,4 +23,5 @@ import DeliveryBenefit from "@/components/mainPage/DeliveryBenefit";
 }
 main{flex: 1;}
 .footer{background: #EAEAEA;}
+[v-cloak]{display: none;}
 </style>

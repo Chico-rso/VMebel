@@ -34,7 +34,7 @@ import BaseInput from "@/components/UI/BaseInput";
 export default defineComponent({
 	name: "AddStoreRequestForm",
 	components: {BaseInput, BaseButton},
-	setup (props, context)
+	setup ()
 	{
 		const phoneNumber = ref('');
 		const error = ref('');

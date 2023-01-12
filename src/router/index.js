@@ -7,6 +7,7 @@ const routes = [
 		name: "MainPage",
 		component: MainPage,
 	}
+	
 ];
 
 const router = createRouter({
