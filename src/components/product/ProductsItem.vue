@@ -26,18 +26,5 @@ const props = defineProps({
 </script>
 
 <style lang="scss">
-.products-item
-{
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	max-width: 279px;
-	border: 1px solid #EAEAEA;
-	border-radius: 10px;
-	padding: 10px;
-}
-@media(min-width: 1440px)
-{
-	.products-item{width: 100%;}
-}
+@import './styles/productsItem';
 </style>

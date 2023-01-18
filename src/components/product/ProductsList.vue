@@ -33,23 +33,50 @@ const productItems = ref([
 		id: 4,
 		title: 'Красивый товар',
 		img: 'https://via.placeholder.com/150',
+	},
+	{
+		id: 5,
+		title: 'Красивый товар',
+		img: 'https://via.placeholder.com/150',
+	},
+	{
+		id: 6,
+		title: 'Красивый товар',
+		img: 'https://via.placeholder.com/150',
+	},
+	{
+		id: 7,
+		title: 'Красивый товар',
+		img: 'https://via.placeholder.com/150',
+	},
+	{
+		id: 8,
+		title: 'Красивый товар',
+		img: 'https://via.placeholder.com/150',
+	},
+	{
+		id: 9,
+		title: 'Красивый товар',
+		img: 'https://via.placeholder.com/150',
+	},
+	{
+		id: 10,
+		title: 'Красивый товар',
+		img: 'https://via.placeholder.com/150',
+	},
+	{
+		id: 11,
+		title: 'Красивый товар',
+		img: 'https://via.placeholder.com/150',
+	},
+	{
+		id: 12,
+		title: 'Красивый товар',
+		img: 'https://via.placeholder.com/150',
 	}
 ])
 </script>
 
 <style lang="scss">
-.products-list
-{
-	display: flex;
-	flex-wrap: wrap;
-	gap: 4px;
-	margin-bottom: 29px;
-}
-@media (min-width: 768px)
-{
-	.products-list
-	{
-		gap: 20px;
-	}
-}
+@import './styles/productsList';
 </style>

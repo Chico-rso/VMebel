@@ -17,5 +17,5 @@ const props = defineProps({
 </script>
 
 <style lang="scss">
-@import "mainMenuListItem.scss";
+@import "./styles/mainMenuListItem";
 </style>

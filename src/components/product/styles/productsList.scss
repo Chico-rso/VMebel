@@ -1,0 +1,14 @@
+.products-list
+{
+	display: flex;
+	flex-wrap: wrap;
+	gap: 4px;
+	margin-bottom: 29px;
+}
+@media (min-width: 768px)
+{
+	.products-list
+	{
+		gap: 20px;
+	}
+}

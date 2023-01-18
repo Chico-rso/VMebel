@@ -1,7 +1,7 @@
 <template>
 	<div class="main-menu-list">
 		<ul
-		    v-for="item in 5"
+		    v-for="item in 7"
 		    :key="item"
 		>
 			<router-link
@@ -47,5 +47,5 @@ const menuItems = ref(
 </script>
 
 <style lang="scss">
-@import "mainMenuList.scss";
+@import "./styles/mainMenuList";
 </style>
