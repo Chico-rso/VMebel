@@ -19,5 +19,6 @@ import MainMenuList from "@/components/mainMenuList/MainMenuList.vue";
 {
 	display: flex;
 	justify-content: space-between;
+	margin-bottom: 49px;
 }
 </style>

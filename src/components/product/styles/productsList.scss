@@ -3,7 +3,8 @@
 	display: flex;
 	flex-wrap: wrap;
 	gap: 4px;
-	margin-bottom: 29px;
+	align-content: flex-start;
+	flex: 1;
 }
 @media (min-width: 768px)
 {

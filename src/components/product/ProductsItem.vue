@@ -1,12 +1,8 @@
 <template>
-	<div class="products-item">
-		<div>
-			<img :src="img" alt="">
-		</div>
-		<div>
-			<p>{{ title }}</p>
-		</div>
-	</div>
+	<router-link to="#" class="products-item">
+		<img :src="img" alt="">
+		<p>{{ title }}</p>
+	</router-link>
 </template>
 
 <script setup>
