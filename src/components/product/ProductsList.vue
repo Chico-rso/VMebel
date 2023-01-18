@@ -42,7 +42,6 @@ const productItems = ref([
 {
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
 	gap: 4px;
 	margin-bottom: 29px;
 }

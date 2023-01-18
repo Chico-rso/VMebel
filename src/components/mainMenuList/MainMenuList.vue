@@ -21,7 +21,7 @@
 </template>
 
 <script setup>
-import MainMenuListItem from "@/components/mainPage/MainMenuListItem.vue";
+import MainMenuListItem from "@/components/mainMenuList/MainMenuListItem.vue";
 import {ref} from "vue";
 
 const menuItems = ref(

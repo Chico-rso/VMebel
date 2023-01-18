@@ -11,7 +11,7 @@
 import { RouterView } from 'vue-router'
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-import DeliveryBenefit from "@/components/mainPage/DeliveryBenefit";
+import DeliveryBenefit from "@/components/deliveryBenefit/DeliveryBenefit";
 
 </script>
 <style lang="scss">
