@@ -1,0 +1,29 @@
+.main-menu-list
+{
+	display: flex;
+	flex-direction: column;
+	border: 1px solid #ABABAB;
+	border-radius: 10px;
+	ul
+	{
+		list-style: none;
+		margin: 0;
+		padding: 0 18px 26px 18px;
+		&:first-child{padding-top: 19px;}
+		&:not(:last-child)
+		{
+			margin-bottom: 17px;
+			border-bottom: 1px solid #ABABAB;
+		}
+		a:hover{color: $btn-color;}
+	}
+}
+.main-menu-list__title
+{
+	display: block;
+	margin-bottom: 10px;
+	font-weight: $bold;
+	font-size: 16px;
+	line-height: 19px;
+	color: $black;
+}
