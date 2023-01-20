@@ -4,12 +4,13 @@
 		    v-for="item in 7"
 		    :key="item"
 		>
-			<router-link
+			<li
 				class="main-menu-list__title"
-				to="#"
 			>
-				Диваны и кресла
-			</router-link>
+				<router-link to="#">
+					Диваны и кресла
+				</router-link>
+			</li>
 			<MainMenuListItem
 				v-for="item in menuItems"
 				:key="item.id"

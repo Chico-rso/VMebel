@@ -3,14 +3,16 @@
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	width: 100%;
 	max-width: 279px;
 	border: 1px solid #EAEAEA;
 	border-radius: 10px;
 	padding: 10px;
 	img
 	{
-		max-width: 148px;
+		max-width: 100%;
 		height: auto;
+		margin-bottom: 15px;
 	}
 }
 @media (min-width: 425px)
@@ -20,7 +22,10 @@
 		img{max-width: 100%;}
 	}
 }
-@media(min-width: 1440px)
+@media (min-width: 768px)
 {
-	.products-item{width: 100%;}
+	.products-item
+	{
+		img{margin-bottom: 19px;}
+	}
 }

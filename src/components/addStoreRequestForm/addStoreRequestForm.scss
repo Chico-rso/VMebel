@@ -72,7 +72,7 @@
 {
 	.add-store-reqest-form
 	{
-		padding: 23px 0 28px 24px;
+		padding: 23px 24px 28px 24px;
 		margin-bottom: 40px;
 		p
 		{
@@ -96,16 +96,13 @@
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
+		padding-right: 53px;
 		p,
 		span,
 		{
 			text-align: left;
 		}
 		form{margin: 0;}
-		img
-		{
-			display: block;
-			margin-right: 53px;
-		}
+		img{display: block;}
 	}
 }

@@ -51,14 +51,20 @@
 						<img src="@/assets/img/svg/header/searchIcon.svg" alt="">
 						<base-input class="header__bottom-input" :placeholder="placeholderText"></base-input>
 					</label>
-					<div class="header__bottom-profile">
-						<img src="@/assets/img/svg/header/profile.svg" alt="">
-						<span>Войти</span>
-					</div>
-					<div class="header__bottom-favorit">
-						<img src="@/assets/img/svg/header/favoritIcon.svg" alt="">
-						<span>Избранное</span>
-					</div>
+					<ul class="header__bottom-menu">
+						<li>
+							<router-link to="#" class="header__bottom-profile">
+								<img src="@/assets/img/svg/header/profile.svg" alt="">
+								<span>Войти</span>
+							</router-link>
+						</li>
+						<li>
+							<router-link to="#" class="header__bottom-favorit">
+								<img src="@/assets/img/svg/header/favoritIcon.svg" alt="">
+								<span>Избранное</span>
+							</router-link>
+						</li>
+					</ul>
 				</div>
 			</div>
 		</div>
@@ -187,8 +193,7 @@ export default {
 .header__bottom{display: none;}
 .header__phone{display: none;}
 .header__info{display: none;}
-.header__bottom-profile{display: none;}
-.header__bottom-favorit{display: none;}
+.header__bottom-menu{display: none;}
 @media screen and (min-width: 768px)
 {
 	.header__wrapper
@@ -374,13 +379,20 @@ export default {
 			&:focus{border-color:  $btn-color;}
 		}
 	}
+
+	.header__bottom-menu
+	{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+		gap: 32px;
+	}
 	.header__bottom-profile,
 	.header__bottom-favorit
 	{
 		display: flex;
 		align-items: center;
-		justify-content: space-between;
-		gap: 26px;
+		gap: 10px;
 		cursor: pointer;
 		font-size: 18px;
 		line-height: 21px;

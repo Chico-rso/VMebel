@@ -1,15 +1,19 @@
 .products-list
 {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 4px;
-	align-content: flex-start;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
 	flex: 1;
+	gap: 4px;
 }
 @media (min-width: 768px)
 {
 	.products-list
 	{
-		gap: 20px;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 17px;
 	}
+}
+@media (min-width: 1440px)
+{
+	.products-list{gap: 20px;}
 }
