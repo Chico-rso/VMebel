@@ -1,5 +1,6 @@
 <template v-cloak>
 	<Header />
+	<CatalogList />
 	<main>
 		<router-view />
 	</main>
@@ -9,9 +10,10 @@
 
 <script setup>
 import { RouterView } from 'vue-router'
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
+import Header from "@/components/header/Header";
+import Footer from "@/components/footer/Footer";
 import DeliveryBenefit from "@/components/deliveryBenefit/DeliveryBenefit";
+import CatalogList from "@/components/catalog/CatalogList.vue";
 
 </script>
 <style lang="scss">
