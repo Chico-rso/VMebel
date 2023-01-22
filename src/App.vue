@@ -1,6 +1,12 @@
 <template v-cloak>
-	<Header />
-	<CatalogList />
+	<Header
+		@toggleCatalogMenu="toggleCatalogMenu"
+		:isCatalogListOpen="isCatalogListOpen"
+	/>
+	<CatalogList
+		v-if="isCatalogListOpen"
+		@closeCatalogList="closeCatalogList()"
+	/>
 	<main>
 		<router-view />
 	</main>
@@ -15,6 +21,22 @@ import Footer from "@/components/footer/Footer";
 import DeliveryBenefit from "@/components/deliveryBenefit/DeliveryBenefit";
 import CatalogList from "@/components/catalog/CatalogList.vue";
 
+import {ref} from "vue";
+
+let isCatalogListOpen = ref(false);
+
+function closeCatalogList(value)
+{
+	console.log("closeCatalogList");
+	isCatalogListOpen.value = false;
+}
+
+function toggleCatalogMenu()
+{
+	console.log("toggleCatalogMenu");
+
+	isCatalogListOpen.value = !isCatalogListOpen.value;
+}
 </script>
 <style lang="scss">
 #app

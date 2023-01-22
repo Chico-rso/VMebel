@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="header__wrapper">
 				<div class="header__top">
-					<div class="header__burger">
+					<div class="header__burger" @click="emit('toggleCatalogMenu')">
 						<input id="header__toggle" type="checkbox"/>
 						<label class="header__btn" for="header__toggle">
 							<span></span>
@@ -38,8 +38,8 @@
 				<div class="header__bottom">
 					<button
 						class="header__catalog-btn"
-						:class="{'header__catalog-btn--active': isCatalogOpen}"
-						@click="openCatalogMenu"
+						:class="{'header__catalog-btn--active': isCatalogListOpen}"
+						@click="toggleCatalogMenu"
 					>
 						<div class="header__catalog-burger" ref="burger">
 							<span></span>
@@ -71,30 +71,24 @@
 	</div>
 </template>
 
-<script>
- import {ref, onMounted} from "vue";
-export default {
-	name: "Header",
-	components: {},
-	setup (props, context)
-	{
-		const placeholderText =  'Поиск';
-		let isCatalogOpen = ref(false);
-		let burger = ref(null);
+<script setup>
+import {ref} from "vue";
 
-		function openCatalogMenu ()
-		{
-			isCatalogOpen.value = !isCatalogOpen.value;
-		}
-
-		return {
-			openCatalogMenu,
-			placeholderText,
-			isCatalogOpen,
-			burger,
-		};
+const emit = defineEmits(["toggleCatalogMenu", "closeCatalogMenu"]);
+const props = defineProps({
+	isCatalogListOpen: {
+		type: Boolean,
+		required: true,
 	},
-};
+});
+
+const placeholderText = "Поиск";
+let burger = ref(null);
+
+function toggleCatalogMenu()
+{
+	emit("toggleCatalogMenu");
+}
 </script>
 
 <style lang="scss">

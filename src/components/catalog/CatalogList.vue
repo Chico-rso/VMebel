@@ -1,22 +1,29 @@
 <template>
-<ul class="catalog-list">
-	<li>
-		<router-link to="#">
-			<span>Mobiles, Computers</span>
-		</router-link>
-	</li>
-	<CatalogItem
-		v-for="catalogItem in catalogItems"
-		:key="catalogItem.id"
-		:title="catalogItem.title"
-	/>
-</ul>
+	<div class="catalog-list__wrapper">
+		<img src="@/assets/img/svg/closeIcon.svg" alt="" @click="emit('closeCatalogList')">
+		<ul class="catalog-list"
+		    v-for="item in 5"
+		>
+			<li class="catalog-item__title">
+				<router-link to="#">
+					Диваны и кресла
+				</router-link>
+			</li>
+			<CatalogItem
+				v-for="catalogItem in catalogItems"
+				:key="catalogItem.id"
+				:title="catalogItem.title"
+			/>
+		</ul>
+	</div>
 </template>
 
 <script setup>
 import CatalogItem from "@/components/catalog/CatalogItem.vue";
 
 import {ref} from "vue";
+
+const emit = defineEmits(["closeCatalogList"]);
 
 const catalogItems = ref([
 	{
