@@ -23,16 +23,5 @@ export default {
 </script>
 
 <style lang="scss">
-.base-input
-{
-	width: 100%;
-	padding-left: 18px;
-	background: #FFFFFF;
-	border: 1px solid #EAEAEA;
-	border-radius: 100px;
-	outline: none;
-	font-weight: $regular;
-	display: flex;
-	align-items: center;
-}
+@import "./styles/baseInput";
 </style>

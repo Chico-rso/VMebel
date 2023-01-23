@@ -1,6 +1,6 @@
 <template>
 	<div class="catalog-list__wrapper">
-		<img src="@/assets/img/svg/closeIcon.svg" alt="" @click="emit('closeCatalogList')">
+		<img src="@/assets/img/svg/closeIcon.svg" alt="" @click="emit('closeMobileMenuBurgerList')">
 		<ul class="catalog-list"
 		    v-for="item in 5"
 		>
@@ -19,11 +19,11 @@
 </template>
 
 <script setup>
-import CatalogItem from "@/components/catalog/CatalogItem.vue";
+import CatalogItem from "@/components/mobileBurgerMenu/MobileBurgerMenuItem.vue";
 
 import {ref} from "vue";
 
-const emit = defineEmits(["closeCatalogList"]);
+const emit = defineEmits(["closeMobileMenuBurgerList"]);
 
 const catalogItems = ref([
 	{
@@ -46,5 +46,5 @@ const catalogItems = ref([
 </script>
 
 <style lang="scss">
-@import "./styles/catalogList";
+@import "./styles/mobileBurgerMenuList";
 </style>

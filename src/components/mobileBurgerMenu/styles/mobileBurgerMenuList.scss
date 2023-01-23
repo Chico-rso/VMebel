@@ -1,12 +1,14 @@
 .catalog-list__wrapper
 {
-	position: absolute;
+	position: fixed;
 	top: 0;
 	left: 0;
 	z-index: 10;
 	max-width: 318px;
 	width: 100%;
 	min-height: 100vh;
+	max-height: 100vh;
+	overflow: auto;
 	background-color: $white;
 	img
 	{
@@ -35,7 +37,15 @@
 		color: $black;
 	}
 }
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.5s ease;
+}
 
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
 @media (min-width: $tablet)
 {
 	.catalog-list__wrapper

@@ -61,5 +61,5 @@ export default defineComponent({
 </script>
 
 <style lang="scss">
-	@import 'addStoreRequestForm.scss';
+	@import './styles/addStoreRequestForm';
 </style>

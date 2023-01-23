@@ -17,5 +17,5 @@ const props = defineProps({
 </script>
 
 <style lang="scss">
-@import "./styles/catalogItem";
+@import "./styles/mobileBurgerMenuItem";
 </style>

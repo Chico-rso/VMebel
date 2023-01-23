@@ -40,5 +40,5 @@ const submitEmail = () =>
 </script>
 
 <style lang="scss">
-@import "deliveryBenefit.scss";
+@import "./styles/deliveryBenefit";
 </style>

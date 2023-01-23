@@ -1,11 +1,11 @@
 <template v-cloak>
 	<Header
-		@toggleCatalogMenu="toggleCatalogMenu"
-		:isCatalogListOpen="isCatalogListOpen"
+		@toggleMobileBurgerMenu="toggleMobileBurgerMenu"
+		:isMobileListOpen="isMobileListOpen"
 	/>
-	<CatalogList
-		v-if="isCatalogListOpen"
-		@closeCatalogList="closeCatalogList()"
+	<MobileBurgerMenu
+		v-if="isMobileListOpen"
+		@closeMobileMenuBurgerList="closeMobileMenuBurgerList()"
 	/>
 	<main>
 		<router-view />
@@ -19,23 +19,20 @@ import { RouterView } from 'vue-router'
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import DeliveryBenefit from "@/components/deliveryBenefit/DeliveryBenefit";
-import CatalogList from "@/components/catalog/CatalogList.vue";
+import MobileBurgerMenu from "@/components/mobileBurgerMenu/MobileBurgerMenuList";
 
 import {ref} from "vue";
 
-let isCatalogListOpen = ref(false);
+let isMobileListOpen = ref(false);
 
-function closeCatalogList(value)
+function closeMobileMenuBurgerList()
 {
-	console.log("closeCatalogList");
-	isCatalogListOpen.value = false;
+	isMobileListOpen.value = false;
 }
 
-function toggleCatalogMenu()
+function toggleMobileBurgerMenu()
 {
-	console.log("toggleCatalogMenu");
-
-	isCatalogListOpen.value = !isCatalogListOpen.value;
+	isMobileListOpen.value = !isMobileListOpen.value;
 }
 </script>
 <style lang="scss">

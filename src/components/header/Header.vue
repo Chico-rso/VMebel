@@ -3,9 +3,17 @@
 		<div class="container">
 			<div class="header__wrapper">
 				<div class="header__top">
-					<div class="header__burger" @click="emit('toggleCatalogMenu')">
-						<input id="header__toggle" type="checkbox"/>
-						<label class="header__btn" for="header__toggle">
+					<div class="header__burger">
+						<input
+							id="header__toggle"
+							type="checkbox"
+							:checked="isMobileListOpen = true"
+						/>
+						<label
+							class="header__btn"
+							for="header__toggle"
+							@click="emit('toggleMobileBurgerMenu')"
+						>
 							<span></span>
 						</label>
 					</div>
@@ -38,7 +46,7 @@
 				<div class="header__bottom">
 					<button
 						class="header__catalog-btn"
-						:class="{'header__catalog-btn--active': isCatalogListOpen}"
+						:class="{'header__catalog-btn--active': isMobileListOpen}"
 						@click="toggleCatalogMenu"
 					>
 						<div class="header__catalog-burger" ref="burger">
@@ -74,9 +82,9 @@
 <script setup>
 import {ref} from "vue";
 
-const emit = defineEmits(["toggleCatalogMenu", "closeCatalogMenu"]);
+const emit = defineEmits(["toggleMobileBurgerMenu", "closeCatalogMenu"]);
 const props = defineProps({
-	isCatalogListOpen: {
+	isMobileListOpen: {
 		type: Boolean,
 		required: true,
 	},
@@ -92,5 +100,5 @@ function toggleCatalogMenu()
 </script>
 
 <style lang="scss">
-@import "header.scss";
+@import "./styles/header";
 </style>
