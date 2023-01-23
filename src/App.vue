@@ -3,10 +3,12 @@
 		@toggleMobileBurgerMenu="toggleMobileBurgerMenu"
 		:isMobileListOpen="isMobileListOpen"
 	/>
-	<MobileBurgerMenu
-		v-if="isMobileListOpen"
-		@closeMobileMenuBurgerList="closeMobileMenuBurgerList()"
-	/>
+	<transition name="slide-fade">
+		<MobileBurgerMenu
+			v-if="isMobileListOpen"
+			@closeMobileMenuBurgerList="closeMobileMenuBurgerList()"
+		/>
+	</transition>
 	<main>
 		<router-view />
 	</main>
@@ -15,13 +17,13 @@
 </template>
 
 <script setup>
-import { RouterView } from 'vue-router'
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import DeliveryBenefit from "@/components/deliveryBenefit/DeliveryBenefit";
 import MobileBurgerMenu from "@/components/mobileBurgerMenu/MobileBurgerMenuList";
 
-import {ref} from "vue";
+import { RouterView } from 'vue-router'
+import {ref, watch} from "vue";
 
 let isMobileListOpen = ref(false);
 
@@ -34,6 +36,21 @@ function toggleMobileBurgerMenu()
 {
 	isMobileListOpen.value = !isMobileListOpen.value;
 }
+watch(
+	{
+		isMobileListOpen: (val) =>
+		{
+			if (val)
+			{
+				document.body.style.overflow = "hidden";
+			}
+			else
+			{
+				document.body.style.overflow = "auto";
+			}
+		},
+	},
+)
 </script>
 <style lang="scss">
 #app
@@ -45,4 +62,21 @@ function toggleMobileBurgerMenu()
 main{flex: 1;}
 .footer{background: #EAEAEA;}
 [v-cloak]{display: none;}
+
+.slide-fade-enter-active
+{
+	transition: all 0.3s ease-out;
+}
+
+.slide-fade-leave-active
+{
+	transition: all 0.3s cubic-bezier(1, 0.5, 0.8, 1);
+}
+
+.slide-fade-enter-from,
+.slide-fade-leave-to
+{
+	transform: translateX(20px);
+	opacity: 0;
+}
 </style>

@@ -7,7 +7,7 @@
 						<input
 							id="header__toggle"
 							type="checkbox"
-							:checked="isMobileListOpen = true"
+							:checked="isMobileListOpen === true"
 						/>
 						<label
 							class="header__btn"
