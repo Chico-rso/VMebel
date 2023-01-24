@@ -17,12 +17,17 @@ import MainMenuList from "@/components/mainMenuList/MainMenuList.vue";
 <style lang="scss">
 .main-page__wrapper
 {
-	display: grid;
+	display: block;
 	grid-template-columns: 1fr;
 	margin-bottom: 49px;
 }
 @media (min-width: 1440px)
 {
-	.main-page__wrapper{grid-template-columns: repeat(4, 1fr);}
+	.main-page__wrapper
+	{
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-start;
+	}
 }
 </style>

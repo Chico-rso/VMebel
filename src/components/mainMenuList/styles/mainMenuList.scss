@@ -1,11 +1,8 @@
 .main-menu-list
 {
 	display: none;
-	flex-direction: column;
-	width: 279px;
 	border: 1px solid #ABABAB;
 	border-radius: 10px;
-	margin-right: 21px;
 	ul
 	{
 		list-style: none;
@@ -29,7 +26,11 @@
 	line-height: 19px;
 	color: $black;
 }
-@media (min-width: 1440px)
+@media (min-width: $desktop)
 {
-	.main-menu-list{display: flex;}
+	.main-menu-list
+	{
+		display: block;
+		flex-basis: 23.7%;
+	}
 }
