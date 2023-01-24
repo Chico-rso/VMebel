@@ -6,7 +6,7 @@
 				<p class="delivery-benefit__descrip">Подпишитесь и получайте промокоды, акции и подборки товаров на свою почту.</p>
 				<form class="delivery-benefit__form" @submit.prevent="submitEmail">
 					<label class="delivery-benefit__label">
-						<input v-model="email" type="email" placeholder="Введите ваш email"/>
+						<input v-model="email" type="email" placeholder="Введите email"/>
 						<span class="delivery-benefit__error" v-if="error">
 							{{ error }}
 						</span>

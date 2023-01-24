@@ -1,11 +1,13 @@
 <template>
-	<slot>
-		<input
-			class="base-input"
-			type="text"
-			:placeholder="placeholder"
-		>
-	</slot>
+	<div>
+		<slot>
+			<input
+				class="base-input"
+				type="text"
+				:placeholder="placeholder"
+			>
+		</slot>
+	</div>
 </template>
 
 <script>

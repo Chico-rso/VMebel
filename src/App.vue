@@ -38,21 +38,20 @@ function toggleMobileBurgerMenu()
 {
 	isMobileListOpen.value = !isMobileListOpen.value;
 }
-watch(
+
+watch(isMobileListOpen, (val) =>
+{
+	if (val)
 	{
-		isMobileListOpen: (val) =>
-		{
-			if (val)
-			{
-				document.body.style.overflow = "hidden";
-			}
-			else
-			{
-				document.body.style.overflow = "auto";
-			}
-		},
-	},
-)
+		document.body.style.overflow = "hidden";
+		document.body.style.background = 'rgba(196, 196, 196, 0.38)';
+	}
+	else
+	{
+		document.body.style.overflow = "auto";
+		document.body.style.background = 'white';
+	}
+});
 </script>
 <style lang="scss">
 #app

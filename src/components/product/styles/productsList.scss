@@ -1,14 +1,14 @@
 .products-list
 {
 	display: grid;
-	grid-template-columns: repeat(2, 1fr);
+	grid-template-columns: repeat(auto-fill, minmax(170px, 1fr));
 	grid-gap: 4px;
 }
 @media (min-width: 768px)
 {
 	.products-list
 	{
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(auto-fill, minmax(231px, 1fr));
 		grid-gap: 17px;
 		grid-column: 3 span;
 	}
@@ -17,7 +17,7 @@
 {
 	.products-list
 	{
-		grid-template-rows: repeat(auto-fit, minmax(279px, 1fr));
+		grid-template-columns: repeat(auto-fill, minmax(279px, 1fr));
 		grid-gap: 21px;
 		flex-basis: 74.5%;
 	}

@@ -1,8 +1,12 @@
 <template>
-	<router-link to="#" class="products-item">
-		<img :src="img" alt="">
-		<p>{{ title }}</p>
-	</router-link>
+	<li  class="products-item">
+		<router-link to="#">
+			<div class="products-item__img">
+				<img src="@/assets/img/ProductImage-1.png" alt="">
+			</div>
+			<p>{{ title }}</p>
+		</router-link>
+	</li>
 </template>
 
 <script setup>
