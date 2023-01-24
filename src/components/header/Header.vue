@@ -24,7 +24,7 @@
 						</router-link>
 					</div>
 					<div class="header__phone">
-						<a href="tel:8 (800) 600-08-88">8 (800) 600-08-88</a>
+						<a href="tel:8(800)600-08-88">8 (800) 600-08-88</a>
 						<span>Республика Северная Осетия — Алания</span>
 					</div>
 					<ul class="header__info">
