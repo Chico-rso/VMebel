@@ -9,6 +9,7 @@
 			@closeMobileMenuBurgerList="closeMobileMenuBurgerList()"
 		/>
 	</transition>
+	<CatalogMenuList />
 	<main>
 		<router-view />
 	</main>
@@ -21,6 +22,7 @@ import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import DeliveryBenefit from "@/components/deliveryBenefit/DeliveryBenefit";
 import MobileBurgerMenu from "@/components/mobileBurgerMenu/MobileBurgerMenuList";
+import CatalogMenuList from "@/components/catalogMenu/CatalogMenuList";
 
 import { RouterView } from 'vue-router'
 import {ref, watch} from "vue";
