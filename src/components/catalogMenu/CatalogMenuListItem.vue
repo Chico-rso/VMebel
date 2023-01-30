@@ -1,7 +1,7 @@
 <template>
-	<div
+<!--		v-if="isOpen"-->
+	<li
 		class="catalog-menu-list-item"
-		v-if="isOpen"
 		v-for="child in item"
 		:key="child.id"
 		@mouseover="cycleChildren(child)"
@@ -9,10 +9,14 @@
 	>
 		<RouterLink to="#">
 			{{ child.name }}
+			<img
+				src="@/assets/img/svg/arrow-right.svg"
+				v-if="child.isOpen && child.children.length > 0"
+			>
 		</RouterLink>
-		<div
+<!--			v-if="child.isOpen"-->
+		<ul
 			class="catalog-menu-list-item__great-grandchild"
-			v-if="child.isOpen"
 			v-for="grandchild in child.children"
 			:key="grandchild.id"
 			@mouseover="cycleChildren(grandchild)"
@@ -20,18 +24,26 @@
 		>
 			<RouterLink to="#">
 				{{ grandchild.name }}
+				<img
+					src="@/assets/img/svg/arrow-right.svg"
+					v-if="grandchild.isOpen && grandchild.children.length > 0"
+				>
 			</RouterLink>
-			<div
-				v-if="grandchild.isOpen"
+<!--				v-if="grandchild.isOpen"-->
+			<li
 				v-for="greatGrandchild in grandchild.children"
 				:key="greatGrandchild.id"
 			>
 				<RouterLink to="#">
 					{{ greatGrandchild.name }}
+					<img
+						src="@/assets/img/svg/arrow-right.svg"
+						v-if="greatGrandchild.isOpen && greatGrandchild.children.length > 0"
+					>
 				</RouterLink>
-			</div>
-		</div>
-	</div>
+			</li>
+		</ul>
+	</li>
 </template>
 
 <script setup>

@@ -1,9 +1,9 @@
 <template>
 	<div class="catalog-menu-list" v-if="isOpenCatalogMenuList">
 		<div class="container">
-			<div class="catalog-menu-list__grid">
-				<div
-					class="catalog-menu-list__item"
+			<div class="catalog-menu-list__wrapper">
+				<ul
+					class="catalog-menu-list__item-ul"
 					v-for="item in catalogArr"
 					:key="item.id"
 					@mouseover="cycleChildren(item)"
@@ -11,7 +11,10 @@
 				>
 					<RouterLink to="#">
 						{{ item.name }}
-						<img src="@/assets/img/svg/arrow-right.svg">
+						<img
+							src="@/assets/img/svg/arrow-right.svg"
+							v-if="item.isOpen && item.children.length > 0"
+						>
 					</RouterLink>
 						<CatalogMenuListItem
 							:item="item.children"
@@ -19,7 +22,7 @@
 							@cycleChildren="cycleChildren"
 							@closeChildren="closeChildren"
 						/>
-				</div>
+				</ul>
 			</div>
 		</div>
 	</div>

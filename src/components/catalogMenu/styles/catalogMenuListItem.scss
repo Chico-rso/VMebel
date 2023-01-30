@@ -1,2 +1,7 @@
-.catalog-menu-list-item	{display: flex;}
-.catalog-menu-list-item__great-grandchild{display: flex;}
+.catalog-menu-list-item__great-grandchild
+{
+	position: absolute;
+	top: 0;
+	left: 100%;
+	height: 100%;
+}
