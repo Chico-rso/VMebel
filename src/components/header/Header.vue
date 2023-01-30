@@ -46,8 +46,8 @@
 				<div class="header__bottom">
 					<button
 						class="header__catalog-btn"
-						:class="{'header__catalog-btn--active': isMobileListOpen}"
-						@click="toggleCatalogMenu"
+						:class="{'header__catalog-btn--active': isOpenCatalogMenuList === true}"
+						@click="openCatalogMenuList"
 					>
 						<div class="header__catalog-burger" ref="burger">
 							<span></span>
@@ -88,14 +88,18 @@ const props = defineProps({
 		type: Boolean,
 		required: true,
 	},
+	isOpenCatalogMenuList: {
+		type: Boolean,
+		required: true,
+	},
 });
 
 const placeholderText = "Поиск";
 let burger = ref(null);
 
-function toggleCatalogMenu()
+function openCatalogMenuList()
 {
-	emit("toggleCatalogMenu");
+	emit("openCatalogMenuList");
 }
 </script>
 

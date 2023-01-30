@@ -2,6 +2,8 @@
 	<Header
 		@toggleMobileBurgerMenu="toggleMobileBurgerMenu"
 		:isMobileListOpen="isMobileListOpen"
+		:isOpenCatalogMenuList="isOpenCatalogMenuList"
+		@openCatalogMenuList="openCatalogMenuList()"
 	/>
 	<transition name="slide-fade">
 		<MobileBurgerMenu
@@ -9,7 +11,9 @@
 			@closeMobileMenuBurgerList="closeMobileMenuBurgerList()"
 		/>
 	</transition>
-	<CatalogMenuList />
+	<CatalogMenuList
+		:isOpenCatalogMenuList="isOpenCatalogMenuList"
+	/>
 	<main>
 		<router-view />
 	</main>
@@ -28,6 +32,7 @@ import { RouterView } from 'vue-router'
 import {ref, watch} from "vue";
 
 let isMobileListOpen = ref(false);
+let isOpenCatalogMenuList = ref(false);
 
 function closeMobileMenuBurgerList()
 {
@@ -37,6 +42,11 @@ function closeMobileMenuBurgerList()
 function toggleMobileBurgerMenu()
 {
 	isMobileListOpen.value = !isMobileListOpen.value;
+}
+
+function openCatalogMenuList()
+{
+	isOpenCatalogMenuList.value = !isOpenCatalogMenuList.value;
 }
 
 watch(isMobileListOpen, (val) =>
