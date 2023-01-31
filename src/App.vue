@@ -14,6 +14,8 @@
 	<CatalogMenuList
 		:isOpenCatalogMenuList="isOpenCatalogMenuList"
 	/>
+<!--	<transition class="slide-fade">-->
+<!--	</transition>-->
 	<main>
 		<router-view />
 	</main>

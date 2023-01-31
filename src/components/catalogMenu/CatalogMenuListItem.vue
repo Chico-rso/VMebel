@@ -1,7 +1,7 @@
 <template>
 <!--		v-if="isOpen"-->
 	<li
-		class="catalog-menu-list-item"
+		class="catalog-menu-list-item__child"
 		v-for="child in item"
 		:key="child.id"
 		@mouseover="cycleChildren(child)"
@@ -16,21 +16,24 @@
 		</RouterLink>
 <!--			v-if="child.isOpen"-->
 		<ul
-			class="catalog-menu-list-item__great-grandchild"
+			class="catalog-menu-list__ul"
 			v-for="grandchild in child.children"
 			:key="grandchild.id"
 			@mouseover="cycleChildren(grandchild)"
 			@mouseleave="closeChildren(grandchild)"
 		>
-			<RouterLink to="#">
-				{{ grandchild.name }}
-				<img
-					src="@/assets/img/svg/arrow-right.svg"
-					v-if="grandchild.isOpen && grandchild.children.length > 0"
-				>
-			</RouterLink>
+			<li class="catalog-menu-list-item__grandchild">
+				<RouterLink to="#">
+					{{ grandchild.name }}
+					<img
+						src="@/assets/img/svg/arrow-right.svg"
+						v-if="grandchild.isOpen && grandchild.children.length > 0"
+					>
+				</RouterLink>
+			</li>
 <!--				v-if="grandchild.isOpen"-->
 			<li
+				class="catalog-menu-list-item__great-grandchild"
 				v-for="greatGrandchild in grandchild.children"
 				:key="greatGrandchild.id"
 			>

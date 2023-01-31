@@ -3,19 +3,21 @@
 		<div class="container">
 			<div class="catalog-menu-list__wrapper">
 				<ul
-					class="catalog-menu-list__item-ul"
+					class="catalog-menu-list__ul"
 					v-for="item in catalogArr"
 					:key="item.id"
 					@mouseover="cycleChildren(item)"
 					@mouseleave="closeChildren(item)"
 				>
-					<RouterLink to="#">
-						{{ item.name }}
-						<img
-							src="@/assets/img/svg/arrow-right.svg"
-							v-if="item.isOpen && item.children.length > 0"
-						>
-					</RouterLink>
+					<li class="catalog-menu-list__item">
+						<RouterLink to="#">
+							{{ item.name }}
+							<img
+								src="@/assets/img/svg/arrow-right.svg"
+								v-if="item.isOpen && item.children.length > 0"
+							>
+						</RouterLink>
+					</li>
 						<CatalogMenuListItem
 							:item="item.children"
 							:isOpen="item.isOpen"

@@ -10,29 +10,9 @@
 	background-color: $white;
 	& * a:hover{color: $btn-color;}
 }
-.catalog-menu-list__item-ul
-{
-	position: absolute;
-	top: 0;
-	left: 0;
-	height: 100%;
-	margin-bottom: 22px;
-	border-right: 1px solid #EAEAEA;
-	&:last-child{margin-bottom: 0;}
-	img
-	{
-		vertical-align: middle;
-		margin-right: 28px;
-	}
-	a
-	{
-		display: flex;
-		align-items: center;
-		justify-content: space-between;
-		flex-basis: 25.5%;
-	}
-}
+
 @media (min-width: 1440px)
 {
 	.catalog-menu-list__wrapper{display: block;}
 }
+
