@@ -1,7 +1,6 @@
 .catalog-menu-list__wrapper
 {
 	display: none;
-	height: 885px;
 	position: absolute;
 	top: -30px;
 	width: 100%;
@@ -9,6 +8,14 @@
 	z-index: 5;
 	background-color: $white;
 	& * a:hover{color: $btn-color;}
+
+	ul
+	{
+		//position: absolute;
+		top: 0;
+		left: 300px;
+		height: 100%;
+	}
 }
 
 @media (min-width: 1440px)

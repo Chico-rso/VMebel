@@ -17,13 +17,13 @@
 								v-if="item.isOpen && item.children.length > 0"
 							>
 						</RouterLink>
-					</li>
 						<CatalogMenuListItem
 							:item="item.children"
 							:isOpen="item.isOpen"
 							@cycleChildren="cycleChildren"
 							@closeChildren="closeChildren"
 						/>
+					</li>
 				</ul>
 			</div>
 		</div>

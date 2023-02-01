@@ -1,13 +1,28 @@
 import {createRouter, createWebHistory} from "vue-router";
-import MainPage from "@/views/MainPage";
 
 const routes = [
 	{
 		path: "/",
-		name: "MainPage",
-		component: MainPage,
+		component: () => import("../layout/BaseLayout.vue"),
+		children: [
+			{
+				path: "/",
+				name: "MainPage",
+				component: () => import("../views/mainPage/MainPage.vue")
+			}
+		]
+	},
+	{
+		path: "/not-found",
+		component: () => import("../layout/PageNotLayout.vue"),
+		children: [
+			{
+				path: "/not-found",
+				name: "NotFoundPage",
+				component: () => import("../views/notFoundPage/NotFoundPage.vue")
+			}
+		],
 	}
-	
 ];
 
 const router = createRouter({

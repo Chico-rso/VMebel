@@ -1,18 +1,18 @@
-<template v-cloak>
-	<main>
+<template>
+	<div class="page-not-layout">
 		<router-view />
-	</main>
+	</div>
 </template>
 
 <script setup>
+import { RouterView } from 'vue-router';
 </script>
 
 <style lang="scss">
-#app
+.page-not-layout
 {
 	display: flex;
 	flex-direction: column;
 	min-height: 100vh;
 }
-main{flex: 1;}
 </style>
