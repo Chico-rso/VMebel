@@ -2,7 +2,7 @@
 	<div class="page-not-found">
 		<div class="page-not-found__wrapper">
 			<h2>Страница не найдена</h2>
-			<RouterLink to="/">
+			<RouterLink class="page-not-found__link" to="/">
 				Перейти на главную
 			</RouterLink>
 		</div>

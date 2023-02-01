@@ -1,6 +1,28 @@
-.not-found-page
+.not-found-page{flex: 1;}
+.page-not-found__wrapper
 {
 	display: flex;
-	align-items: center;
 	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	height: 100vh;
+}
+.page-not-found__link
+{
+	padding: 0 30px;
+	background: #FC4442;
+	border-radius: 100px;
+	color: $white;
+	font-size: 13px;
+	font-weight: 500;
+	line-height: 38px;
+	cursor: pointer;
+	transition: all 0.2s ease-in-out;
+	border: none;
+	&:hover
+	{
+		background: #FFFFFF;
+		color: #FC4442;
+		outline: 1px solid #FC4442;
+	}
 }
