@@ -15,19 +15,5 @@ import MainMenuList from "@/components/mainMenuList/MainMenuList.vue";
 </script>
 
 <style lang="scss">
-.main-page__wrapper
-{
-	display: block;
-	grid-template-columns: 1fr;
-	margin-bottom: 49px;
-}
-@media (min-width: 1440px)
-{
-	.main-page__wrapper
-	{
-		display: flex;
-		justify-content: space-between;
-		align-items: flex-start;
-	}
-}
+@import "mainPage.scss";
 </style>

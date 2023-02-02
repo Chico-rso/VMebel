@@ -13,5 +13,5 @@
 </script>
 
 <style lang="scss">
-@import "style.scss";
+@import "notFoundPage";
 </style>

@@ -1,5 +1,5 @@
 <template>
-	<div class="header">
+	<header is-open-catalog-menu-list is-mobile-list-open class="header">
 		<div class="container">
 			<div class="header__wrapper">
 				<div class="header__top">
@@ -76,7 +76,7 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</header>
 </template>
 
 <script setup>
