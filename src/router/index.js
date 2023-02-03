@@ -8,7 +8,14 @@ const routes = [
 			{
 				path: "/",
 				name: "MainPage",
-				component: () => import("../views/mainPage/MainPage.vue")
+				component: () => import("../views/mainPage/MainPage.vue"),
+				breadcrumb: 'VMebel'
+			},
+			{
+				path: "category/:id",
+				name: "CategoryPage",
+				component: () => import("../views/categoryPage/CategoryPage.vue"),
+				breadcrumb: 'Категория'
 			}
 		]
 	},

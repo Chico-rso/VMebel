@@ -1,10 +1,8 @@
 <template>
 	<AddStoreRequestForm />
-	<div class="container">
-		<div class="main-page__wrapper">
-			<MainMenuList />
-			<ProductsList />
-		</div>
+	<div class="main-page__wrapper">
+		<MainMenuList />
+		<ProductsList />
 	</div>
 </template>
 

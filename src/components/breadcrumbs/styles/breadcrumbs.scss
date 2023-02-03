@@ -1,0 +1,32 @@
+.breadcrumbs
+{
+	display: flex;
+	align-items: center;
+	padding-bottom: 20px;
+	img
+	{
+		vertical-align: middle;
+		padding: 0 7px;
+	}
+}
+.breadcrumbs__item
+{
+	a
+	{
+		white-space: nowrap;
+		font-weight: 700;
+		font-size: 14px;
+		line-height: 16px;
+		color: $grey;
+	}
+	&:not(:first-of-type)
+	{
+		a{font-weight: 400;}
+	}
+	&:last-of-type
+	{
+		a{color: $black;}
+		img{display: none;}
+	}
+}
+.breadcrumbs__link{display: flex;}

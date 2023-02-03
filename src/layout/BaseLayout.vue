@@ -15,7 +15,13 @@
 		:isOpenCatalogMenuList="isOpenCatalogMenuList"
 	/>
 	<div class="base-layout">
-		<router-view/>
+		<div class="container">
+			<Breadcrumbs
+				v-if="$route.name !== 'MainPage'"
+				:crumbs="crumbs"
+			/>
+			<router-view/>
+		</div>
 	</div>
 	<DeliveryBenefit/>
 	<Footer/>
@@ -27,12 +33,31 @@ import Footer from "@/components/footer/Footer";
 import DeliveryBenefit from "@/components/deliveryBenefit/DeliveryBenefit";
 import MobileBurgerMenu from "@/components/mobileBurgerMenu/MobileBurgerMenuList";
 import CatalogMenuList from "@/components/catalogMenu/CatalogMenuList";
+import Breadcrumbs from "@/components/breadcrumbs/Breadcrumbs";
 
 import {RouterView} from "vue-router";
-import {ref, watch} from "vue";
+import {ref, watch, computed} from "vue";
 
 let isMobileListOpen = ref(false);
 let isOpenCatalogMenuList = ref(false);
+
+const crumbs = computed(() =>
+{
+	return [
+		{
+			text: "VMebel",
+			path: "/"
+		},
+		{
+			text: "Диваны и кресла",
+			path: "/category/1"
+		},
+		{
+			text: "Mobiles, Computers",
+			path: "/product"
+		},
+	];
+});
 
 function closeMobileMenuBurgerList()
 {

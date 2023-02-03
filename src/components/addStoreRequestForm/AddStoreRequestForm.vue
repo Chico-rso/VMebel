@@ -1,28 +1,26 @@
 <template>
-	<div class="container">
-		<div class="add-store-reqest-form">
-			<div>
-				<p>Отправить заявку на добавление магазина</p>
-				<span>Подключение к макретплейсю бесплатное</span>
-				<form @submit.prevent="submitHandler">
-					<label class="add-store-reqest-form__label">
-						<input
-							v-model="phoneNumber"
-							type="tel"
-							v-maska
-							data-maska="+7(###)-###-##-##"
-							placeholder="+7"
-						/>
-						<span class="add-store-reqest-form__error" v-if="error">
-							{{ error }}
-						</span>
-					</label>
-					<BaseButton class="add-store-reqest-form__btn" type="submit">Отправить</BaseButton>
-				</form>
-			</div>
-			<div>
-				<img src="@/assets/img/svg/addStore.svg" alt="">
-			</div>
+	<div class="add-store-reqest-form">
+		<div>
+			<p>Отправить заявку на добавление магазина</p>
+			<span>Подключение к макретплейсю бесплатное</span>
+			<form @submit.prevent="submitHandler">
+				<label class="add-store-reqest-form__label">
+					<input
+						v-model="phoneNumber"
+						type="tel"
+						v-maska
+						data-maska="+7(###)-###-##-##"
+						placeholder="+7"
+					/>
+					<span class="add-store-reqest-form__error" v-if="error">
+						{{ error }}
+					</span>
+				</label>
+				<BaseButton class="add-store-reqest-form__btn" type="submit">Отправить</BaseButton>
+			</form>
+		</div>
+		<div>
+			<img src="@/assets/img/svg/addStore.svg" alt="">
 		</div>
 	</div>
 </template>
