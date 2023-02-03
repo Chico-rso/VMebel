@@ -16,12 +16,14 @@
 	/>
 	<div class="base-layout">
 		<div class="container">
-			<div class="base-layout__back"
-			     v-if="$route.name !== 'MainPage'"
+			<router-link
+				v-if="$route.name !== 'MainPage'"
+				class="base-layout__back"
+				to="/"
 			>
 				<img src="@/assets/img/svg/arrowBack.svg" alt="">
 				<p>Назад</p>
-			</div>
+			</router-link>
 			<Breadcrumbs
 				v-if="$route.name !== 'MainPage'"
 				:crumbs="crumbs"
