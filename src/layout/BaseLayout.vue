@@ -16,6 +16,12 @@
 	/>
 	<div class="base-layout">
 		<div class="container">
+			<div class="base-layout__back"
+			     v-if="$route.name !== 'MainPage'"
+			>
+				<img src="@/assets/img/svg/arrowBack.svg" alt="">
+				<p>Назад</p>
+			</div>
 			<Breadcrumbs
 				v-if="$route.name !== 'MainPage'"
 				:crumbs="crumbs"
@@ -111,5 +117,24 @@ watch(isMobileListOpen, (val) =>
 {
 	transform: translateX(20px);
 	opacity: 0;
+}
+.base-layout__back
+{
+	display: flex;
+	align-items: center;
+	margin-bottom: 20px;
+	cursor: pointer;
+	img{margin-right: 7px;}
+	p
+	{
+		font-weight: 500;
+		font-size: 8px;
+		line-height: 9px;
+		color: $grey;
+	}
+}
+@media (min-width: 1440px)
+{
+	.base-layout__back{display: none;}
 }
 </style>
