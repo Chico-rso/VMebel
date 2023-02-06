@@ -7,12 +7,12 @@
 						<input
 							id="header__toggle"
 							type="checkbox"
-							:checked="isMobileListOpen === true"
+							:checked="isOpenMobileBurgerMenuList"
 						/>
 						<label
 							class="header__btn"
 							for="header__toggle"
-							@click="emit('toggleMobileBurgerMenu')"
+							@click="toggleMoileMenuList()"
 						>
 							<span></span>
 						</label>
@@ -81,18 +81,18 @@
 
 <script setup>
 import {ref} from "vue";
+import { useMobileBurgerMenuStore } from "@/store/mobileBurgerMenu/mobileBurgerMenu";
+import { storeToRefs } from "pinia";
 
 const emit = defineEmits(["toggleMobileBurgerMenu", "closeCatalogMenu"]);
 const props = defineProps({
-	isMobileListOpen: {
-		type: Boolean,
-		required: true,
-	},
 	isOpenCatalogMenuList: {
 		type: Boolean,
 		required: true,
 	},
 });
+
+const { isOpenMobileBurgerMenuList } = storeToRefs(useMobileBurgerMenuStore());
 
 const placeholderText = "Поиск";
 let burger = ref(null);
@@ -101,6 +101,12 @@ function openCatalogMenuList()
 {
 	emit("openCatalogMenuList");
 }
+
+function toggleMoileMenuList()
+{
+	isOpenMobileBurgerMenuList.value = !isOpenMobileBurgerMenuList.value;
+}
+
 </script>
 
 <style lang="scss">

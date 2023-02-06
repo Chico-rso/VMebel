@@ -1,48 +1,19 @@
 <template>
-	<div class="catalog-list__wrapper">
-		<img src="@/assets/img/svg/closeIcon.svg" alt="" @click="emit('closeMobileMenuBurgerList')">
-		<ul class="catalog-list"
-		    v-for="item in 5"
-		>
-			<li class="catalog-item__title">
-				<router-link to="#">
-					Диваны и кресла
-				</router-link>
-			</li>
-			<CatalogItem
-				v-for="catalogItem in catalogItems"
-				:key="catalogItem.id"
-				:title="catalogItem.title"
-			/>
-		</ul>
+	<div class="mobile-burger-menu-list__wrapper">
+		<img src="@/assets/img/svg/closeIcon.svg" alt="" @click="closeBurgerMobileMenu">
+		<slot></slot>
 	</div>
 </template>
 
 <script setup>
-import CatalogItem from "@/components/mobileBurgerMenu/MobileBurgerMenuItem.vue";
+import { useMobileBurgerMenuStore } from "@/store/mobileBurgerMenu/mobileBurgerMenu";
+import { storeToRefs } from "pinia";
 
-import {ref} from "vue";
+const { isOpenMobileBurgerMenuList } = storeToRefs(useMobileBurgerMenuStore());
 
-const emit = defineEmits(["closeMobileMenuBurgerList"]);
-
-const catalogItems = ref([
-	{
-		id: 1,
-		title: 'Mobiles, Computers',
-	},
-	{
-		id: 2,
-		title: 'Movies, Music & Video Games',
-	},
-	{
-		id: 3,
-		title: 'Gift Cards & Mobile Recharges',
-	},
-	{
-		id: 4,
-		title: 'Car, Motorbike, Industrial',
-	},
-]);
+function closeBurgerMobileMenu() {
+	isOpenMobileBurgerMenuList.value = false;
+}
 </script>
 
 <style lang="scss">

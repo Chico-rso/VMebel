@@ -1,16 +1,8 @@
 <template>
 	<Header
-		@toggleMobileBurgerMenu="toggleMobileBurgerMenu"
-		:isMobileListOpen="isMobileListOpen"
 		:isOpenCatalogMenuList="isOpenCatalogMenuList"
 		@openCatalogMenuList="openCatalogMenuList()"
 	/>
-	<transition name="slide-fade">
-		<MobileBurgerMenu
-			v-if="isMobileListOpen"
-			@closeMobileMenuBurgerList="closeMobileMenuBurgerList()"
-		/>
-	</transition>
 	<CatalogMenuList
 		:isOpenCatalogMenuList="isOpenCatalogMenuList"
 	/>
@@ -39,14 +31,12 @@
 import Header from "@/components/header/Header";
 import Footer from "@/components/footer/Footer";
 import DeliveryBenefit from "@/components/deliveryBenefit/DeliveryBenefit";
-import MobileBurgerMenu from "@/components/mobileBurgerMenu/MobileBurgerMenuList";
 import CatalogMenuList from "@/components/catalogMenu/CatalogMenuList";
 import Breadcrumbs from "@/components/breadcrumbs/Breadcrumbs";
 
 import {RouterView} from "vue-router";
 import {ref, watch, computed} from "vue";
 
-let isMobileListOpen = ref(false);
 let isOpenCatalogMenuList = ref(false);
 
 const crumbs = computed(() =>
@@ -67,34 +57,10 @@ const crumbs = computed(() =>
 	];
 });
 
-function closeMobileMenuBurgerList()
-{
-	isMobileListOpen.value = false;
-}
-
-function toggleMobileBurgerMenu()
-{
-	isMobileListOpen.value = !isMobileListOpen.value;
-}
-
 function openCatalogMenuList()
 {
 	isOpenCatalogMenuList.value = !isOpenCatalogMenuList.value;
 }
-
-watch(isMobileListOpen, (val) =>
-{
-	if (val)
-	{
-		document.body.style.overflow = "hidden";
-		document.body.style.background = "rgba(196, 196, 196, 0.38)";
-	}
-	else
-	{
-		document.body.style.overflow = "auto";
-		document.body.style.background = "white";
-	}
-});
 </script>
 
 <style lang="scss">

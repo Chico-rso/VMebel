@@ -1,5 +1,5 @@
 <template>
-<li class="catalog-item">
+<li class="mobile-burger-menu-item">
 	<router-link to="#">
 		<span>{{title}}</span>
 	</router-link>

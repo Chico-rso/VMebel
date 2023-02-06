@@ -1,4 +1,4 @@
-.catalog-list__wrapper
+.mobile-burger-menu-list__wrapper
 {
 	position: fixed;
 	top: 0;
@@ -19,13 +19,13 @@
 	}
 	a:hover{color: $btn-color;}
 }
-.catalog-list
+.mobile-burger-menu-list
 {
 	position: relative;
 	padding: 23px 15px;
 	border-bottom: 1px solid #EAEAEA;
 }
-.catalog-item__title
+.mobile-burger-menu-list__title
 {
 	margin-bottom: 16px;
 	a
@@ -48,7 +48,7 @@
 }
 @media (min-width: $tablet)
 {
-	.catalog-list__wrapper
+	.mobile-burger-menu-list__wrapper
 	{
 		max-width: 365px;
 		width: 100%;
