@@ -1,6 +1,6 @@
 <template>
 	<div class="mobile-menu-list__wrapper">
-		<img src="@/assets/img/svg/closeIcon.svg" alt="" @click="closeMobileMenu">
+		<img src="@/assets/img/svg/closeIcon.svg" alt="" @click="close()">
 		<slot></slot>
 	</div>
 </template>
@@ -9,10 +9,14 @@
 import { useMobileMenuStore } from "@/store/mobileMenu/mobileMenu";
 import { storeToRefs } from "pinia";
 
+const emit = defineEmits(['closeMobileMenuList']);
 const { isOpenMobileMenuList } = storeToRefs(useMobileMenuStore());
 
-function closeMobileMenu() {
+function close() {
 	isOpenMobileMenuList.value = false;
+	emit('closeMobileMenuList')
+	console.log('closeMobileMenuList');
+
 }
 </script>
 
