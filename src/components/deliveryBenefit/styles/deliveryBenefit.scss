@@ -28,12 +28,12 @@
 .delivery-benefit__form
 {
 	max-width: 516px;
-	width: 100%;
+	width: 94%;
 	position: relative;
 	margin-bottom: 15px;
 	input
 	{
-	    height: 44px;
+	    height: 49px;
 	    width: 100%;
 	    padding: 0 150px 0 16px;
 	    background: #FFFFFF;
@@ -42,6 +42,11 @@
 		color: $grey;
 		&:focus{border-color:  $btn-color;}
 		&::placeholder{color: $input;}
+	}
+	button
+	{
+		padding: 0 20px;
+		line-height: 43px;
 	}
 }
 .delivery-benefit__btn
@@ -89,7 +94,11 @@
 		font-size: 16px;
 		line-height: 19px;
 	}
-	.delivery-benefit__form{margin-bottom: 49px;}
+	.delivery-benefit__form
+	{
+		margin-bottom: 49px;
+		button{padding: 0 30px;}
+	}
 }
 @media (min-width: 1440px)
 {
