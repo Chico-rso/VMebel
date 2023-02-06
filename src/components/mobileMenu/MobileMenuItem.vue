@@ -1,5 +1,5 @@
 <template>
-<li class="mobile-burger-menu-item">
+<li class="mobile-menu-item">
 	<router-link to="#">
 		<span>{{title}}</span>
 	</router-link>
@@ -17,5 +17,5 @@ const props = defineProps({
 </script>
 
 <style lang="scss">
-@import "./styles/mobileBurgerMenuItem";
+@import "styles/mobileMenuItem";
 </style>

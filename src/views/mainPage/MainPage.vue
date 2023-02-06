@@ -4,26 +4,26 @@
 		<MainMenuList/>
 		<ProductsList/>
 		<transition name="slide-fade">
-			<mobile-burger-menu-list
+			<mobile-menu-list
 				:catalogItems="catalogItems"
-				v-if="isOpenMobileBurgerMenuList"
-				@closeMobileMenuBurgerList="closeMobileMenuBurgerList()"
+				v-if="isOpenMobileMenuList"
+				@closeMobileMenuList="closeMobileMenuList()"
 			>
-				<ul class="mobile-burger-menu-list"
+				<ul class="mobile-menu-list"
 				    v-for="item in 5"
 				>
-					<li class="mobile-burger-menu-list__title">
+					<li class="mobile-menu-list__title">
 						<router-link to="#">
 							Диваны и кресла
 						</router-link>
 					</li>
-					<MobileBurgerMenuItem
+					<MobileMenuItem
 						v-for="catalogItem in catalogItems"
 						:key="catalogItem.id"
 						:title="catalogItem.title"
 					/>
 				</ul>
-			</mobile-burger-menu-list>
+			</mobile-menu-list>
 		</transition>
 	</div>
 </template>
@@ -32,17 +32,17 @@
 import AddStoreRequestForm from "@/components/addStoreRequestForm/AddStoreRequestForm.vue";
 import ProductsList from "@/components/product/ProductsList.vue";
 import MainMenuList from "@/components/mainMenuList/MainMenuList.vue";
-import MobileBurgerMenuList from "@/components/mobileBurgerMenu/MobileBurgerMenuList.vue";
-import MobileBurgerMenuItem from "@/components/mobileBurgerMenu/MobileBurgerMenuItem.vue";
+import MobileMenuList from "@/components/mobileMenu/MobileMenuList.vue";
+import MobileMenuItem from "@/components/mobileMenu/MobileMenuItem.vue";
 
-import { useMobileBurgerMenuStore } from "@/store/mobileBurgerMenu/mobileBurgerMenu";
+import { useMobileMenuStore } from "@/store/mobileMenu/mobileMenu";
 import { storeToRefs } from "pinia";
 
 import {ref} from "vue";
 
 let isMobileListOpen = ref(false);
 
-const { isOpenMobileBurgerMenuList } = storeToRefs(useMobileBurgerMenuStore());
+const { isOpenMobileMenuList } = storeToRefs(useMobileMenuStore());
 
 const catalogItems = ref([
 	{
@@ -64,7 +64,7 @@ const catalogItems = ref([
 ]);
 
 
-function closeMobileMenuBurgerList()
+function closeMobileMenuList()
 {
 	isMobileListOpen.value = false;
 }
