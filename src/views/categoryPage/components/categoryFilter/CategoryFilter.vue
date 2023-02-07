@@ -1,8 +1,16 @@
 <template>
 	<div class="category-filter">
+		<div class="category-filter__close">
+			<img src="@/assets/img/svg/closeIcon.svg" alt="">
+		</div>
 		<div class="category-filter__background"></div>
 		<div class="category-filter__content">
-			<ul class="category__filter-subcategories">
+			<ul class="category-filter__subcategories">
+				<li>
+					<router-link to="#" class="category-filter__subcategories-title">
+						Диваны и кресла
+					</router-link>
+				</li>
 				<li
 					v-for="subcategory in subcategories"
 					:key="subcategory.id"
@@ -10,7 +18,7 @@
 					<router-link :to="subcategory.url">
 						{{ subcategory.title }}
 					</router-link>
-				></li>
+				</li>
 			</ul>
 			<ul class="category-filter__accordion">
 				<li>

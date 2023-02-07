@@ -7,6 +7,13 @@
 	height: 100vh;
 	z-index: 10;
 }
+.category-filter__close
+{
+	position: absolute;
+	top: 16px;
+	left: 243px;
+	z-index: 1;
+}
 .category-filter__background
 {
 	position: absolute;
@@ -26,4 +33,31 @@
 	min-width: 279px;
 	height: 100%;
 	background-color: #FFFFFF;
+	overflow: auto;
+}
+.category-filter__subcategories
+{
+	padding: 19px 16px 26px 18px;
+}
+.category-filter__subcategories-title
+{
+	margin-bottom: 10px;
+	display: flex;
+	a
+	{
+		font-weight: $medium;
+		font-size: 16px;
+		line-height: 19px;
+		color: $black;
+	}
+}
+.category__filter-subcategories-item
+{
+	a
+	{
+		font-weight: $regular;
+		font-size: 14px;
+		line-height: 16px;
+		color: $grey;
+	}
 }

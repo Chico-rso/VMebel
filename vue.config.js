@@ -13,7 +13,9 @@ module.exports =
 				additionalData:
 					`@import "@/assets/scss/_variables.scss";
 					 @import "@/assets/scss/_normalize.scss";
-					 @import "@/assets/scss/base.scss";`,
+					 @import "@/assets/scss/base.scss";
+					 @import "@/assets/fonts/styles.scss";
+					 `,
 			},
 		},
 	},
