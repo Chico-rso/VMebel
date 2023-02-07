@@ -12,20 +12,11 @@
 			@click="closeMobileMenuList()"
 			v-if="isOpenMobileMenuList"
 		>
-			<ul class="mobile-menu-list"
-			    v-for="item in 5"
-			>
-				<li class="mobile-menu-list__title">
-					<router-link to="#">
-						Диваны и кресла
-					</router-link>
-				</li>
-				<MobileMenuItem
-					v-for="catalogItem in catalogItems"
-					:key="catalogItem.id"
-					:title="catalogItem.title"
-				/>
-			</ul>
+			<MobileMenuItem
+				v-for="catalogItem in catalogItems"
+				:key="catalogItem.id"
+				:title="catalogItem.title"
+			/>
 		</mobile-menu-list>
 	</transition>
 	<div class="base-layout">
@@ -84,6 +75,7 @@ const catalogItems = ref([
 		id: 4,
 		title: 'Car, Motorbike, Industrial',
 	},
+
 ]);
 const crumbs = computed(() =>
 {
