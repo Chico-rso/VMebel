@@ -1,0 +1,22 @@
+.accordion{border-top: 1px solid #EAEAEA;}
+.accordion__header
+	{
+		display: flex;
+		justify-content: space-between;
+		padding:0 18px;
+		height: 61px;
+		align-items: center;
+		font-size: 14px;
+		color:#2D2D2D;
+		img
+		{
+			width: 11.67px;
+			height: 7px;
+		}
+	}
+	.accordion__header-open img{transform: rotate(180deg);}
+	.accordion__header-open + .accordion__content
+	{
+		padding-bottom: 32px;
+	}
+	.accordion__content{margin-left: 20px}

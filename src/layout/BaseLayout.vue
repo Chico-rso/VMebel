@@ -61,7 +61,7 @@ import MobileMenuList from "@/components/mobileMenu/MobileMenuList";
 import { useMobileMenuStore } from "@/store/mobileMenu/mobileMenu";
 import { storeToRefs } from "pinia";
 import {RouterView} from "vue-router";
-import {ref, watch, computed} from "vue";
+import {ref, computed} from "vue";
 
 const { isOpenMobileMenuList } = storeToRefs(useMobileMenuStore());
 

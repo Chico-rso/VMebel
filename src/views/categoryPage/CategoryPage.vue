@@ -28,8 +28,8 @@ import {ref} from "vue";
 
 let openCategoryFilter = ref(false);
 
-function toggleCategoryFilter() {
-
+function toggleCategoryFilter()
+{
 	openCategoryFilter.value = !openCategoryFilter.value;
 }
 

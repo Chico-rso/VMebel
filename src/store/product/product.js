@@ -8,7 +8,7 @@ export const useProductStore = defineStore('productId',{
 				{
 					id: 1,
 					title: "Красивый товар",
-					img: "@/assets/img/ProductImage-1.png",
+					img: "@/assets/img/ProductImage-1.png"
 				},
 				{
 					id: 2,
