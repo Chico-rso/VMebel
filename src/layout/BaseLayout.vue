@@ -52,7 +52,7 @@ import MobileMenuList from "@/components/mobileMenu/MobileMenuList";
 import { useMobileMenuStore } from "@/store/mobileMenu/mobileMenu";
 import { storeToRefs } from "pinia";
 import {RouterView} from "vue-router";
-import {ref, computed} from "vue";
+import {ref, computed, watch} from "vue";
 
 const { isOpenMobileMenuList } = storeToRefs(useMobileMenuStore());
 
@@ -103,6 +103,18 @@ function closeMobileMenuList()
 {
 	isOpenMobileMenuList.value = false;
 }
+
+watch(isOpenMobileMenuList, (val) =>
+{
+	if (val)
+	{
+		document.body.style.overflow = "hidden";
+	}
+	else
+	{
+		document.body.style.overflow = "auto";
+	}
+});
 </script>
 
 <style lang="scss">

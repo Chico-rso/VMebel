@@ -13,7 +13,11 @@
 		</button>
 		<div class="category__products">
 			<transition name="slide-fade">
-				<CategoryFilter/>
+				<CategoryFilter
+					v-if="openCategoryFilter"
+					:openCategoryFilter="openCategoryFilter"
+					@closeCategoryFilter="toggleCategoryFilter"
+				/>
 			</transition>
 			<ProductsList/>
 		</div>
@@ -31,6 +35,15 @@ let openCategoryFilter = ref(false);
 function toggleCategoryFilter()
 {
 	openCategoryFilter.value = !openCategoryFilter.value;
+
+	if(openCategoryFilter.value)
+	{
+		document.body.style.overflow = "hidden";
+	}
+	else
+	{
+		document.body.style.overflow = "auto";
+	}
 }
 
 </script>

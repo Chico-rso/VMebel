@@ -1,6 +1,6 @@
 <template>
 	<div class="category-filter">
-		<div class="category-filter__close">
+		<div class="category-filter__close" @click="closeCategoryFilter">
 			<img src="@/assets/img/svg/closeIcon.svg" alt="">
 		</div>
 		<div class="category-filter__background"></div>
@@ -42,12 +42,27 @@
 import {ref} from "vue";
 import Accordion from "@/components/accordion/Accordion.vue";
 
+const props = defineProps({
+	openCategoryFilter: {
+		type: Boolean,
+		required: true,
+	},
+});
+const $emit = defineEmits(["closeCategoryFilter"]);
+
+let close = ref(props.openCategoryFilter);
+
 const subcategories = ref([
 	{id:2, title:"Mobiles, Computers", url:"/", },
 	{id:3, title:"Movies, Music & Video Games", url:"/", },
 	{id:4, title:"Gift Cards & Mobile Recharges", url:"/", },
 	{id:5, title:"Car, Motorbike, Industrial", url:"/", },
 ])
+
+function closeCategoryFilter()
+{
+	$emit("closeCategoryFilter", close.value);
+}
 </script>
 
 <style lang="scss">
