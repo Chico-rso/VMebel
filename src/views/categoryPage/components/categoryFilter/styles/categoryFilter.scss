@@ -1,0 +1,29 @@
+.category-filter
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 10;
+}
+.category-filter__background
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(196, 196, 196, 0.38);
+}
+.category-filter__content
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: flex;
+	flex-direction: column;
+	min-width: 279px;
+	height: 100%;
+	background-color: #FFFFFF;
+}

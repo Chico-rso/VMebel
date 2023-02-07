@@ -1,85 +1,45 @@
 <template>
-	<ul class="category-filter">
-		<li>
-			<ul>
+	<div class="category-filter">
+		<div class="category-filter__background"></div>
+		<div class="category-filter__content">
+			<ul class="category__filter-subcategories">
+				<li
+					v-for="subcategory in subcategories"
+					:key="subcategory.id"
+					class="category__filter-subcategories-item">
+					<router-link :to="subcategory.url">
+						{{ subcategory.title }}
+					</router-link>
+				></li>
+			</ul>
+			<ul class="category-filter__accordion">
 				<li>
-					<router-link to="#">Диваны и кресла</router-link>
+					<accordion title="Цена, ₽">
+					</accordion>
 				</li>
 				<li>
-					<router-link to="#">Movies, Music & Video Games</router-link>
+					<accordion title="Бренд">
+					</accordion>
 				</li>
 				<li>
-					<router-link to="#">Gift Cards & Mobile Recharges</router-link>
-				</li>
-				<li>
-					<router-link to="#">Car, Motorbike, Industrial</router-link>
-				</li>
-				<li>
-					<router-link to="#">Mobiles, Computers</router-link>
+					<accordion title="Коллекция">
+					</accordion>
 				</li>
 			</ul>
-		</li>
-		<li>
-			<Accordion title="Цена, ₽">
-				<div class="category-filter__price">
-					<div class="category-filter__price-input">
-						<input type="text" placeholder="от">
-						<input type="text" placeholder="до">
-					</div>
-					<div class="category-filter__price-slider">
-						<Slider/>
-					</div>
-				</div>
-			</Accordion>
-		</li>
-		<li>
-			<Accordion title="Бренд">
-				<ul>
-					<li>
-						<router-link to="#">Диваны и кресла</router-link>
-					</li>
-					<li>
-						<router-link to="#">Movies, Music & Video Games</router-link>
-					</li>
-					<li>
-						<router-link to="#">Gift Cards & Mobile Recharges</router-link>
-					</li>
-					<li>
-						<router-link to="#">Car, Motorbike, Industrial</router-link>
-					</li>
-					<li>
-						<router-link to="#">Mobiles, Computers</router-link>
-					</li>
-				</ul>
-			</Accordion>
-		</li>
-		<li>
-			<Accordion title="Коллекция">
-
-				<ul>
-					<li>
-						<router-link to="#">Диваны и кресла</router-link>
-					</li>
-					<li>
-						<router-link to="#">Movies, Music & Video Games</router-link>
-					</li>
-					<li>
-						<router-link to="#">Gift Cards & Mobile Recharges</router-link>
-					</li>
-					<li>
-						<router-link to="#">Car, Motorbike, Industrial</router-link>
-					</li>
-					<li>
-						<router-link to="#">Mobiles, Computers</router-link>
-					</li>
-				</ul>
-			</Accordion>
-		</li>
-	</ul>
+		</div>
+	</div>
 </template>
 
 <script setup>
+import {ref} from "vue";
 import Accordion from "@/components/accordion/Accordion.vue";
+
+const subcategories = ref([
+	{id:2, title:"Mobiles, Computers", url:"/", },
+	{id:3, title:"Movies, Music & Video Games", url:"/", },
+	{id:4, title:"Gift Cards & Mobile Recharges", url:"/", },
+	{id:5, title:"Car, Motorbike, Industrial", url:"/", },
+])
 </script>
 
 <style lang="scss">
