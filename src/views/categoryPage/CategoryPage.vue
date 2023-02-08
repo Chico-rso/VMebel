@@ -51,6 +51,10 @@ onMounted(() => {
 		openCategoryFilter.value = true;
 		document.body.style.overflow = "auto";
 	}
+	else
+	{
+		openCategoryFilter.value = false;
+	}
 });
 </script>
 
