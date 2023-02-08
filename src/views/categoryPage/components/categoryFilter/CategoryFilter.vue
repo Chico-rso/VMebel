@@ -23,26 +23,37 @@
 			<ul class="category-filter__accordion">
 				<li>
 					<accordion title="Цена, ₽">
-						<CheckBox />
 					</accordion>
 				</li>
 				<li>
 					<accordion title="Бренд">
+						<CheckBoxList
+							id="brand"
+							:checkBoxListData="brandCheckBoxListData"
+						/>
 					</accordion>
 				</li>
 				<li>
 					<accordion title="Коллекция">
+						<CheckBoxList
+							id="collection"
+							:checkBoxListData="collectionCheckBoxListData"
+						/>
 					</accordion>
 				</li>
 			</ul>
+			<button class="category-filter__clear">Очистить фильтр</button>
 		</div>
 	</div>
 </template>
 
 <script setup>
 import {ref} from "vue";
+import { useCategoryFilterDataStore } from "@/store/categoryFilterData";
 import Accordion from "@/components/accordion/Accordion.vue";
-import CheckBox from "@/components/checkBox/CheckBox.vue";
+import CheckBoxList from "@/components/checkBoxList/CheckBoxList.vue";
+
+const { brandCheckBoxListData, collectionCheckBoxListData } = useCategoryFilterDataStore();
 
 const props = defineProps({
 	openCategoryFilter: {
@@ -60,7 +71,6 @@ const subcategories = ref([
 	{id:4, title:"Gift Cards & Mobile Recharges", url:"/", },
 	{id:5, title:"Car, Motorbike, Industrial", url:"/", },
 ])
-
 function closeCategoryFilter()
 {
 	$emit("closeCategoryFilter", close.value);

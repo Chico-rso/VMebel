@@ -20,7 +20,7 @@
 </template>
 
 <script setup>
-import { useMobileMenuStore } from "@/store/mobileMenu/mobileMenu";
+import { useMobileMenuStore } from "@/store/mobileMenu";
 import { storeToRefs } from "pinia";
 
 const emit = defineEmits(['closeMobileMenuList']);

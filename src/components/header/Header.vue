@@ -39,7 +39,7 @@
 						</li>
 					</ul>
 					<div class="header__rigth">
-						<img src="@/assets/img/svg/header/searchIcon.svg" alt="">
+						<img src="@/assets/img/svg/searchIcon.svg" alt="">
 						<img src="@/assets/img/svg/header/favoritIcon.svg" alt="">
 					</div>
 				</div>
@@ -56,7 +56,7 @@
 						Каталог
 					</button>
 					<label class="header__bottom-label">
-						<img src="@/assets/img/svg/header/searchIcon.svg" alt="">
+						<img src="@/assets/img/svg/searchIcon.svg" alt="">
 						<base-input class="header__bottom-input" :placeholder="placeholderText"></base-input>
 					</label>
 					<ul class="header__bottom-menu">
@@ -81,7 +81,7 @@
 
 <script setup>
 import {ref} from "vue";
-import { useMobileMenuStore } from "@/store/mobileMenu/mobileMenu";
+import { useMobileMenuStore } from "@/store/mobileMenu";
 import { storeToRefs } from "pinia";
 
 const emit = defineEmits(["closeCatalogMenu"]);

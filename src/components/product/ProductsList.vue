@@ -11,7 +11,7 @@
 
 <script setup>
 import ProductsItem from "@/components/product/ProductsItem.vue";
-import { useProductStore } from "@/store/product/product";
+import { useProductStore } from "@/store/product";
 
 const productsStore = useProductStore();
 </script>

@@ -1,0 +1,38 @@
+.check-box-list__find-place
+{
+	position: relative;
+	width: min-content;
+	img
+	{
+		position: absolute;
+		right: 12px;
+		top:32%;
+		height: 16px;
+		width: 16px;
+		cursor: pointer;
+	}
+	input
+	{
+		margin-bottom: 15px;
+		padding-left: 12px;
+		padding-right: 40px;
+		display: block;
+		border:1px solid #EAEAEA;
+		border-radius: 5px;
+		min-width: 225px;
+		height: 40px;
+		font-size: 14px;
+	}
+	input::placeholder
+	{
+		color:#6C6C6C;
+		font-weight: 400;
+	}
+}
+.check-box-list__checkbox{margin-bottom: 15px;}
+.check-box-list__main
+{
+	padding-left: 3px;
+	max-height: 230px;
+	overflow: auto;
+}

@@ -49,7 +49,7 @@ import Breadcrumbs from "@/components/breadcrumbs/Breadcrumbs";
 import MobileMenuItem from "@/components/mobileMenu/MobileMenuItem";
 import MobileMenuList from "@/components/mobileMenu/MobileMenuList";
 
-import { useMobileMenuStore } from "@/store/mobileMenu/mobileMenu";
+import { useMobileMenuStore } from "@/store/mobileMenu";
 import { storeToRefs } from "pinia";
 import {RouterView} from "vue-router";
 import {ref, computed, watch} from "vue";
