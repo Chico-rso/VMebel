@@ -16,7 +16,7 @@
 		color: $grey;
 	}
 }
-.category__filter
+.category__filter-button
 {
 
 	display: flex;
@@ -56,5 +56,11 @@
 }
 @media (min-width: 1440px)
 {
-	.category__products{margin-bottom: 151px;}
+	.category__products
+	{
+		margin-bottom: 151px;
+		display: flex;
+		justify-content: space-between;
+	}
+	.category__filter-button{display: none;}
 }

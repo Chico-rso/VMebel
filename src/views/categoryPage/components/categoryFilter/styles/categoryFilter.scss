@@ -74,3 +74,25 @@
 	color: #FC4442;
 	border: none;
 }
+@media (min-width: 1440px)
+{
+	.category-filter
+	{
+		position: static;
+		display: flex;
+		width: unset;
+		border: 1px solid #ABABAB;
+		border-radius: 10px;
+		padding: 3px;
+	}
+	.category-filter__close,
+	.category-filter__background
+	{
+		display: none;
+	}
+	.category-filter__content
+	{
+		position: unset;
+	}
+	.category-filter__clear{margin-bottom: 34px;}
+}
