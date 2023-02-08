@@ -23,6 +23,7 @@
 			<ul class="category-filter__accordion">
 				<li>
 					<accordion title="Цена, ₽">
+						<CheckBox />
 					</accordion>
 				</li>
 				<li>
@@ -41,6 +42,7 @@
 <script setup>
 import {ref} from "vue";
 import Accordion from "@/components/accordion/Accordion.vue";
+import CheckBox from "@/components/checkBox/CheckBox.vue";
 
 const props = defineProps({
 	openCategoryFilter: {
