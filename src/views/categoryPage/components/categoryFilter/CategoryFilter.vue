@@ -23,6 +23,13 @@
 			<ul class="category-filter__accordion">
 				<li>
 					<accordion title="Цена, ₽">
+						<RangeSlider
+							id="price"
+							:min="0"
+							:max="100000"
+							:step="1000"
+							@update:value="updateValue"
+						/>
 					</accordion>
 				</li>
 				<li>
@@ -52,6 +59,7 @@ import {ref} from "vue";
 import { useCategoryFilterDataStore } from "@/store/categoryFilterData";
 import Accordion from "@/components/accordion/Accordion.vue";
 import CheckBoxList from "@/components/checkBoxList/CheckBoxList.vue";
+import RangeSlider from "@/components/rangeSlider/RangeSlider.vue";
 
 const { brandCheckBoxListData, collectionCheckBoxListData } = useCategoryFilterDataStore();
 
@@ -64,6 +72,7 @@ const props = defineProps({
 const $emit = defineEmits(["closeCategoryFilter"]);
 
 let close = ref(props.openCategoryFilter);
+let updateValue = ref(null);
 
 const subcategories = ref([
 	{id:2, title:"Mobiles, Computers", url:"/", },
