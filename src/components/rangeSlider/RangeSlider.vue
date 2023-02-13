@@ -9,6 +9,18 @@
 			v-model="value"
 			@input="updateValue"
 		/>
+		<div class="range-slider__min">
+			<input
+				type="text"
+				:value="min"
+			>
+		</div>
+		<div class="range-slider__max">
+			<input
+				type="text"
+				:value="max"
+			>
+		</div>
         <div class="range-slider__display">{{ value }}</div>
 	</div>
 </template>

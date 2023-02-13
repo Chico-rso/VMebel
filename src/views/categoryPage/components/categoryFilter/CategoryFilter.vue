@@ -26,8 +26,8 @@
 						<RangeSlider
 							id="price"
 							:min="0"
-							:max="100000"
-							:step="1000"
+							:max="100"
+							:step="1"
 							@update:value="updateValue"
 						/>
 					</accordion>
