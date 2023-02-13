@@ -1,5 +1,21 @@
 <template>
 	<div class="range-slider">
+		<div class="range-slider__value">
+			<div class="range-slider__min">
+				<input
+					type="text"
+					v-model="value"
+					@input="updateValue"
+				>
+			</div>
+			<div class="range-slider__max">
+				<input
+					type="text"
+					v-model="value"
+					@input="updateValue"
+				>
+			</div>
+		</div>
 		<input
 			type="range"
 			ref="range"
@@ -7,20 +23,7 @@
 			:max="max"
 			:step="step"
 			v-model="value"
-			@input="updateValue"
 		/>
-		<div class="range-slider__min">
-			<input
-				type="text"
-				:value="min"
-			>
-		</div>
-		<div class="range-slider__max">
-			<input
-				type="text"
-				:value="max"
-			>
-		</div>
         <div class="range-slider__display">{{ value }}</div>
 	</div>
 </template>
