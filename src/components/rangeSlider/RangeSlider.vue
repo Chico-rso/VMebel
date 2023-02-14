@@ -1,72 +1,59 @@
 <template>
 	<div class="range-slider">
-		<div class="range-slider__value">
-			<div class="range-slider__min">
-				<label for="min">Min:</label>
+		<div class="range-slider__input-places">
+			<div class="range-slider__input-place">
+				<span>от</span>
 				<input
-					id="min"
-					type="text"
-					v-model.number="rangeSliderData.minValue"
-					@input="updateMinValue"
+					type="number"
+					v-model.number="rangeSliderData.state.min"
 				>
 			</div>
-			<div class="range-slider__max">
-				<label for="max">Max:</label>
+			<div class="range-slider__decoration"/>
+			<div class="range-slider__input-place">
+				<span>до</span>
 				<input
-					id="max"
-					type="text"
-					v-model.number="rangeSliderData.maxValue"
-					@input="updateMaxValue"
+					type="number"
+					v-model.number="rangeSliderData.state.max"
 				>
 			</div>
 		</div>
-		<div class="range-slider__input-wrapper">
-			<input
-				class="range-slider__input"
-				type="range"
-				:min="rangeSliderData.min"
-				:max="rangeSliderData.max"
-				:step="rangeSliderData.step"
-				:value="rangeSliderData.minValue"
-				@input="updateMinValue"
-			/>
-			<input
-				class="range-slider__input"
-				type="range"
-				:min="rangeSliderData.min"
-				:max="rangeSliderData.max"
-				:step="rangeSliderData.step"
-				:value="rangeSliderData.maxValue"
-				@input="updateMaxValue"
-			/>
-			<div class="range-slider__display" :style="{left: `${percentageLeft}%`, right: `${percentageRight}%`}">
-				{{ rangeSliderData.minValue }} - {{ rangeSliderData.maxValue }}
-			</div>
-		</div>
+		<Slider
+			ref="slider"
+			v-model="rangeSliderState"
+			:max="rangeSliderData.maxValue"
+			:bg-style="bgStyle"
+			:process-style="processStyle"
+		>
+		</Slider>
+<!--			:tooltip="null"-->
 	</div>
+
 </template>
-
 <script setup>
-import {computed, defineEmits, defineProps} from "vue";
+import "vue-range-component/dist/vue-range-slider.css";
 
-	const props = defineProps( {
-		rangeSliderData: Object,
-	});
-	const emit = defineEmits(["update:min-value", "update:max-value"]);
+import {ref, computed, onMounted} from "vue";
 
-	const percentageLeft = computed(() => ((props.minValue - props.min) / (props.max - props.min)) * 100);
-	const percentageRight = computed(() => ((props.maxValue - props.min) / (props.max - props.min)) * 100);
+const props = defineProps({
+	rangeSliderData: Object,
+});
 
-	function updateMinValue(event)
+onMounted(() => {
+	console.log(props.rangeSliderData.value);
+});
+
+const emit = defineEmits(["changeSliderState"]);
+
+const bgStyle = ref({background: "#FCF9EC"});
+const processStyle = ref({background: "#F0E19E"});
+const rangeSliderState = computed({
+	get()
 	{
-		const value = Math.min(event.target.value, props.maxValue - props.step);
-		emit("update:min-value", value);
-	}
-
-	function updateMaxValue(event)
+		return [props.rangeSliderData.state.min, props.rangeSliderData.state.max];
+	},
+	set(sliderState)
 	{
-		const value = Math.max(event.target.value, props.minValue + props.step);
-		emit("update:max-value", value);
-	}
-
+		emit("changeSliderState", sliderState);
+	},
+});
 </script>

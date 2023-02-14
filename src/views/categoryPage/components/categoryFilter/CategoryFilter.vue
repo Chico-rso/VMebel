@@ -25,7 +25,7 @@
 					<accordion title="Цена, ₽">
 						<RangeSlider
 							:rangeSliderData="rangeSliderData"
-							@update:value="updateValue"
+							@changeSliderState="setNewRangeSliderState"
 						/>
 					</accordion>
 				</li>
@@ -66,17 +66,16 @@ const props = defineProps({
 		required: true,
 	},
 });
-const $emit = defineEmits(["closeCategoryFilter"]);
+const emit = defineEmits(["closeCategoryFilter"]);
 
 let close = ref(props.openCategoryFilter);
-let updateValue = ref(null);
 
-let rangeSliderData = ref({
-	min: 0,
-	max: 100,
-	step: 1,
-	minValue: 0,
-	maxValue: 100,
+const rangeSliderData = ref({
+	state: {
+		min: 25,
+		max: 6500,
+	},
+	maxValue: 6500,
 });
 const subcategories = ref([
 	{id:2, title:"Mobiles, Computers", url:"/", },
@@ -86,7 +85,12 @@ const subcategories = ref([
 ])
 function closeCategoryFilter()
 {
-	$emit("closeCategoryFilter", close.value);
+	emit("closeCategoryFilter", close.value);
+}
+function setNewRangeSliderState(sliderState)
+{
+	this.rangeSliderData.state.min = sliderState[0];
+	this.rangeSliderData.state.max = sliderState[1];
 }
 </script>
 
