@@ -3,7 +3,7 @@
 		<div class="container">
 			<div class="footer__wrapper">
 				<div class="footer__left">
-					<span>Есть вопросы? Звоните:  <a href="">8 (800) 600-08-88</a></span>
+					<span>Есть вопросы? Звоните:  <a href="tel:8(800)600-08-88">8 (800) 600-08-88</a></span>
 					<span>Режим работы с 8 до 22</span>
 				</div>
 				<div class="footer__right">
