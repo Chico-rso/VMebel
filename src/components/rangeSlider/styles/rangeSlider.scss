@@ -1,0 +1,71 @@
+.range-slider
+{
+	input::-webkit-outer-spin-button,
+	input::-webkit-inner-spin-button
+	{-webkit-appearance: none;margin: 0;}
+
+	input[type='number']
+	{-moz-appearance: textfield;}
+	.slider-base
+	{
+		width: 99.7%;
+		background: #FCF9EC;
+	}
+	.slider-connect{background: #F0E19E;}
+	.slider-handle
+	{
+		background: #FC4442;
+		box-shadow: none;
+	}
+}
+.range-slider__input-places
+{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 16px;
+
+	input
+	{
+		width: 87px;
+		height: 40px;
+		border: 1px solid #EAEAEA;
+		border-radius: 5px;
+		padding-left: 35px;
+		font-size: 14px;
+		line-height: 20px;
+	}
+}
+
+.range-slider__input-place
+{
+	height: 100%;
+	position: relative;
+	color: #2D2D2D;
+	font-size: 14px;
+	line-height: 20px;
+
+	span
+	{
+		position: absolute;
+		top: 30%;
+		left: 15px;
+
+	}
+}
+
+.range-slider__decoration
+{
+	width: 12px;
+	height: 2px;
+	background: #EAEAEA;
+	margin: 0 30px 0 29px;
+
+}
+
+
+.range-slider .vue-range-slider.slider-component.slider-horizontal .slider-dot
+{
+	background: #fc4442;
+	box-shadow: none
+}

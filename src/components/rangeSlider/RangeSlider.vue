@@ -21,17 +21,14 @@
 			ref="slider"
 			v-model="rangeSliderState"
 			:max="rangeSliderData.maxValue"
-			:bg-style="bgStyle"
-			:process-style="processStyle"
+			:tooltips="false"
 		>
 		</Slider>
-<!--			:tooltip="null"-->
 	</div>
 
 </template>
 <script setup>
-import "vue-range-component/dist/vue-range-slider.css";
-
+import Slider from '@vueform/slider'
 import {ref, computed, onMounted} from "vue";
 
 const props = defineProps({
@@ -44,8 +41,6 @@ onMounted(() => {
 
 const emit = defineEmits(["changeSliderState"]);
 
-const bgStyle = ref({background: "#FCF9EC"});
-const processStyle = ref({background: "#F0E19E"});
 const rangeSliderState = computed({
 	get()
 	{
@@ -57,3 +52,8 @@ const rangeSliderState = computed({
 	},
 });
 </script>
+<style src="@vueform/slider/themes/default.css">
+</style>
+<style lang="scss">
+@import "styles/rangeSlider";
+</style>
