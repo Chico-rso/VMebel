@@ -52,7 +52,7 @@
 </template>
 
 <script setup>
-import {ref} from "vue";
+import {reactive, ref} from "vue";
 import { useCategoryFilterDataStore } from "@/store/categoryFilterData";
 import Accordion from "@/components/accordion/Accordion.vue";
 import CheckBoxList from "@/components/checkBoxList/CheckBoxList.vue";
@@ -70,7 +70,7 @@ const emit = defineEmits(["closeCategoryFilter"]);
 
 let close = ref(props.openCategoryFilter);
 
-const rangeSliderData = ref({
+const rangeSliderData = reactive({
 	state: {
 		min: 25,
 		max: 6500,

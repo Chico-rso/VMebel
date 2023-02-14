@@ -35,10 +35,6 @@ const props = defineProps({
 	rangeSliderData: Object,
 });
 
-onMounted(() => {
-	console.log(props.rangeSliderData.value);
-});
-
 const emit = defineEmits(["changeSliderState"]);
 
 const rangeSliderState = computed({
@@ -48,6 +44,8 @@ const rangeSliderState = computed({
 	},
 	set(sliderState)
 	{
+		console.log(sliderState);
+
 		emit("changeSliderState", sliderState);
 	},
 });
