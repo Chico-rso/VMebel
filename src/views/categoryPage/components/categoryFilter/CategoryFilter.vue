@@ -24,10 +24,7 @@
 				<li>
 					<accordion title="Цена, ₽">
 						<RangeSlider
-							id="price"
-							:min="0"
-							:max="100"
-							:step="1"
+							:rangeSliderData="rangeSliderData"
 							@update:value="updateValue"
 						/>
 					</accordion>
@@ -74,6 +71,13 @@ const $emit = defineEmits(["closeCategoryFilter"]);
 let close = ref(props.openCategoryFilter);
 let updateValue = ref(null);
 
+let rangeSliderData = ref({
+	min: 0,
+	max: 100,
+	step: 1,
+	minValue: 0,
+	maxValue: 100,
+});
 const subcategories = ref([
 	{id:2, title:"Mobiles, Computers", url:"/", },
 	{id:3, title:"Movies, Music & Video Games", url:"/", },

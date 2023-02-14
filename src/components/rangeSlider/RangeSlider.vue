@@ -2,67 +2,71 @@
 	<div class="range-slider">
 		<div class="range-slider__value">
 			<div class="range-slider__min">
+				<label for="min">Min:</label>
 				<input
+					id="min"
 					type="text"
-					v-model="value"
-					@input="updateValue"
+					v-model.number="rangeSliderData.minValue"
+					@input="updateMinValue"
 				>
 			</div>
 			<div class="range-slider__max">
+				<label for="max">Max:</label>
 				<input
+					id="max"
 					type="text"
-					v-model="value"
-					@input="updateValue"
+					v-model.number="rangeSliderData.maxValue"
+					@input="updateMaxValue"
 				>
 			</div>
 		</div>
-		<input
-			type="range"
-			ref="range"
-			:min="min"
-			:max="max"
-			:step="step"
-			v-model="value"
-		/>
-        <div class="range-slider__display">{{ value }}</div>
+		<div class="range-slider__input-wrapper">
+			<input
+				class="range-slider__input"
+				type="range"
+				:min="rangeSliderData.min"
+				:max="rangeSliderData.max"
+				:step="rangeSliderData.step"
+				:value="rangeSliderData.minValue"
+				@input="updateMinValue"
+			/>
+			<input
+				class="range-slider__input"
+				type="range"
+				:min="rangeSliderData.min"
+				:max="rangeSliderData.max"
+				:step="rangeSliderData.step"
+				:value="rangeSliderData.maxValue"
+				@input="updateMaxValue"
+			/>
+			<div class="range-slider__display" :style="{left: `${percentageLeft}%`, right: `${percentageRight}%`}">
+				{{ rangeSliderData.minValue }} - {{ rangeSliderData.maxValue }}
+			</div>
+		</div>
 	</div>
 </template>
 
 <script setup>
-import {ref} from "vue";
+import {computed, defineEmits, defineProps} from "vue";
 
-const range = ref(null);
-const value = ref(0);
+	const props = defineProps( {
+		rangeSliderData: Object,
+	});
+	const emit = defineEmits(["update:min-value", "update:max-value"]);
 
-const props = defineProps({
-	min: {
-		type: Number,
-		default: 0
-	},
-	max: {
-		type: Number,
-		default: 100
-	},
-	step: {
-		type: Number,
-		default: 1
-	},
-	value: {
-		type: Number,
-		default: 0
+	const percentageLeft = computed(() => ((props.minValue - props.min) / (props.max - props.min)) * 100);
+	const percentageRight = computed(() => ((props.maxValue - props.min) / (props.max - props.min)) * 100);
+
+	function updateMinValue(event)
+	{
+		const value = Math.min(event.target.value, props.maxValue - props.step);
+		emit("update:min-value", value);
 	}
-});
 
-const emit = defineEmits(['update:value']);
+	function updateMaxValue(event)
+	{
+		const value = Math.max(event.target.value, props.minValue + props.step);
+		emit("update:max-value", value);
+	}
 
-function updateValue()
-{
-	console.log('updateValue', ref.range.value);
-
-	emit('update:value', ref.range.value);
-}
 </script>
-
-<style lang="scss">
-@import './styles/rangeSlider.scss';
-</style>
