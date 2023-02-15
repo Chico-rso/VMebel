@@ -89,8 +89,8 @@ function closeCategoryFilter()
 }
 function setNewRangeSliderState(sliderState)
 {
-	this.rangeSliderData.state.min = sliderState[0];
-	this.rangeSliderData.state.max = sliderState[1];
+	rangeSliderData.state.min = sliderState[0];
+	rangeSliderData.state.max = sliderState[1];
 }
 </script>
 

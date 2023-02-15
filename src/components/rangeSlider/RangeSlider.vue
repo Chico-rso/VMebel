@@ -44,8 +44,6 @@ const rangeSliderState = computed({
 	},
 	set(sliderState)
 	{
-		console.log(sliderState);
-
 		emit("changeSliderState", sliderState);
 	},
 });
