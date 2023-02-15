@@ -16,6 +16,12 @@ const routes = [
 				name: "CategoryPage",
 				component: () => import("../views/categoryPage/CategoryPage.vue"),
 				breadcrumb: 'Категория'
+			},
+			{
+				path: "about",
+				name: "AboutPage",
+				component: () => import("../views/aboutPage/AboutPage.vue"),
+				breadcrumb: 'О нас'
 			}
 		]
 	},
