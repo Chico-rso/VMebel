@@ -52,7 +52,7 @@
 </template>
 
 <script setup>
-import {reactive, ref} from "vue";
+import {reactive, ref, watch,} from "vue";
 import { useCategoryFilterDataStore } from "@/store/categoryFilterData";
 import Accordion from "@/components/accordion/Accordion.vue";
 import CheckBoxList from "@/components/checkBoxList/CheckBoxList.vue";
@@ -89,7 +89,7 @@ function closeCategoryFilter()
 }
 function setNewRangeSliderState(sliderState)
 {
-	rangeSliderData.state.min = sliderState[0];
+	rangeSliderData.state.min = sliderState[0] <= 25 ? 25 : sliderState[0];
 	rangeSliderData.state.max = sliderState[1];
 }
 </script>
