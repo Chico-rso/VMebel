@@ -30,7 +30,7 @@
 				<p>Назад</p>
 			</router-link>
 			<Breadcrumbs
-				v-if="$route.name !== 'MainPage' && $route.name !== 'AboutPage'"
+				v-if="$route.name !== 'MainPage' && $route.name !== 'AboutPage' && $route.name !== 'ContactsPage'"
 				:crumbs="crumbs"
 			/>
 			<router-view/>

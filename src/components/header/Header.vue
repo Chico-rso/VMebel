@@ -32,10 +32,10 @@
 							<router-link to="#">Магазины</router-link>
 						</li>
 						<li class="header__info-item">
-							<router-link to="#">О компании</router-link>
+							<router-link to="/about">О компании</router-link>
 						</li>
 						<li class="header__info-item">
-							<router-link to="#">Контакты</router-link>
+							<router-link to="/contacts">Контакты</router-link>
 						</li>
 					</ul>
 					<div class="header__rigth">
