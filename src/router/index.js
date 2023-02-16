@@ -22,6 +22,12 @@ const routes = [
 				name: "AboutPage",
 				component: () => import("../views/aboutPage/AboutPage.vue"),
 				breadcrumb: 'О нас'
+			},
+			{
+				path: "contacts",
+				name: "ContactsPage",
+				component: () => import("../views/contactsPage/ContactsPage.vue"),
+				breadcrumb: 'Контакты'
 			}
 		]
 	},

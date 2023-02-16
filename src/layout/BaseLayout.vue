@@ -75,7 +75,6 @@ const catalogItems = ref([
 		id: 4,
 		title: 'Car, Motorbike, Industrial',
 	},
-
 ]);
 const crumbs = computed(() =>
 {
