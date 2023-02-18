@@ -5,7 +5,7 @@
 		:stickyHeader="stickyHeader"
 		ref="header"
 	/>
-	<div v-if="stickyHeader" class="header__sticky" style="height: 90px;"></div>
+	<div v-if="stickyHeader" class="header__sticky" style="height: 94px;"></div>
 	<CatalogMenuList
 		:isOpenCatalogMenuList="isOpenCatalogMenuList"
 	/>
@@ -134,7 +134,10 @@ function updateStickyHeader()
 }
 onMounted(() =>
 {
-	window.addEventListener("scroll", updateStickyHeader);
+	if(window.innerWidth <= 1024)
+	{
+		window.addEventListener("scroll", updateStickyHeader);
+	}
 });
 onUnmounted(() =>
 {

@@ -4,7 +4,7 @@
 		is-open-catalog-menu-list
 		is-mobile-list-open
 		class="header"
-		:class="{'header--fixed': stickyHeader === true}"
+		:class="{'header--sticky': stickyHeader === true}"
 		sticky-header
 	>
 		<div class="container">
