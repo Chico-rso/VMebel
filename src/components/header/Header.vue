@@ -1,6 +1,5 @@
 <template>
 	<header
-		ref="header"
 		is-open-catalog-menu-list
 		is-mobile-list-open
 		class="header"

@@ -60,6 +60,11 @@
 		line-height: 16px;
 		color: $grey;
 	}
+	&:not(:last-child){margin-bottom: 10px;}
+	&:hover
+	{
+		a{color: $btn-color}
+	}
 }
 .category-filter__clear
 {
@@ -73,6 +78,7 @@
 	line-height: 43px;
 	color: #FC4442;
 	border: none;
+	cursor: pointer;
 }
 @media (min-width: 1440px)
 {
