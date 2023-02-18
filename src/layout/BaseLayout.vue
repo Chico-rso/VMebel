@@ -2,7 +2,10 @@
 	<Header
 		:isOpenCatalogMenuList="isOpenCatalogMenuList"
 		@openCatalogMenuList="openCatalogMenuList()"
+		:stickyHeader="stickyHeader"
+		ref="header"
 	/>
+	<div v-if="stickyHeader" class="header__sticky" style="height: 90px;"></div>
 	<CatalogMenuList
 		:isOpenCatalogMenuList="isOpenCatalogMenuList"
 	/>
@@ -52,11 +55,13 @@ import MobileMenuList from "@/components/mobileMenu/MobileMenuList";
 import { useMobileMenuStore } from "@/store/mobileMenu";
 import { storeToRefs } from "pinia";
 import {RouterView} from "vue-router";
-import {ref, computed, watch} from "vue";
+import {ref, computed, watch, onMounted, onUnmounted} from "vue";
 
 const { isOpenMobileMenuList } = storeToRefs(useMobileMenuStore());
+const header = ref(null);
 
 let isOpenCatalogMenuList = ref(false);
+let stickyHeader = ref(false);
 
 const catalogItems = ref([
 	{
@@ -113,6 +118,27 @@ watch(isOpenMobileMenuList, (val) =>
 	{
 		document.body.style.overflow = "auto";
 	}
+});
+function updateStickyHeader()
+{
+	let scroll = window.pageYOffset;
+	console.log(scroll);
+	if(scroll >= 90)
+	{
+		stickyHeader.value = true;
+	}
+	else if(scroll < 0)
+	{
+		stickyHeader.value = false;
+	}
+}
+onMounted(() =>
+{
+	window.addEventListener("scroll", updateStickyHeader);
+});
+onUnmounted(() =>
+{
+	window.removeEventListener("scroll", updateStickyHeader);
 });
 </script>
 

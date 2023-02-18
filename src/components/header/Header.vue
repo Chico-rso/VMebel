@@ -1,5 +1,11 @@
 <template>
-	<header is-open-catalog-menu-list is-mobile-list-open class="header">
+	<header
+		ref="header"
+		is-open-catalog-menu-list
+		is-mobile-list-open
+		class="header"
+		:class="{'header--fixed': stickyHeader}"
+	>
 		<div class="container">
 			<div class="header__wrapper">
 				<div class="header__top">
@@ -80,13 +86,17 @@
 </template>
 
 <script setup>
-import {ref} from "vue";
+import {onMounted, ref} from "vue";
 import { useMobileMenuStore } from "@/store/mobileMenu";
 import { storeToRefs } from "pinia";
 
 const emit = defineEmits(["closeCatalogMenu"]);
 const props = defineProps({
 	isOpenCatalogMenuList: {
+		type: Boolean,
+		required: true,
+	},
+	stickyHeader: {
 		type: Boolean,
 		required: true,
 	},
@@ -106,7 +116,6 @@ function toggleMoileMenuList()
 {
 	isOpenMobileMenuList.value = !isOpenMobileMenuList.value;
 }
-
 </script>
 
 <style lang="scss">
