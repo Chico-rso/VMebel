@@ -127,7 +127,7 @@ function updateStickyHeader()
 	{
 		stickyHeader.value = true;
 	}
-	else if(scroll < 0)
+	else
 	{
 		stickyHeader.value = false;
 	}
