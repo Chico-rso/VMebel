@@ -29,7 +29,7 @@
 </template>
 <script setup>
 import Slider from '@vueform/slider'
-import {ref, computed, onMounted} from "vue";
+import {computed} from "vue";
 
 const props = defineProps({
 	rangeSliderData: Object,
