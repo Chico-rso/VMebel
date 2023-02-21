@@ -19,7 +19,11 @@
 					@closeCategoryFilter="toggleCategoryFilter"
 				/>
 			</transition>
-			<ProductsList/>
+			<ProductsList
+				:favorite="favorite"
+				:favoriteIcon="favoriteIcon"
+				@addFavorite="addFavorite"
+			/>
 		</div>
 	</div>
 </template>
@@ -27,10 +31,15 @@
 <script setup>
 import ProductsList from "@/components/product/ProductsList.vue";
 import CategoryFilter from "@/views/categoryPage/components/categoryFilter/CategoryFilter.vue";
+import { useProductStore } from "@/store/product";
 
 import {ref, onMounted} from "vue";
+import {useCookies} from "vue3-cookies";
 
 let openCategoryFilter = ref(false);
+let favorite = ref(false);
+let favoriteIcon = ref(true);
+const productsStore = useProductStore();
 
 function toggleCategoryFilter()
 {
@@ -42,6 +51,20 @@ function toggleCategoryFilter()
 	else
 	{
 		document.body.style.overflow = "auto";
+	}
+}
+
+function addFavorite(value, key)
+{
+	if(value)
+	{
+		productsStore.addToFavorite(key);
+		// useCookies().set('favorite', productsStore.favoriteList);
+	}
+	else
+	{
+		productsStore.removeFromFavorite(key);
+		// useCookies().remove('favorite', productsStore.favoriteList);
 	}
 }
 

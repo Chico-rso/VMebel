@@ -28,6 +28,12 @@ const routes = [
 				name: "ContactsPage",
 				component: () => import("../views/contactsPage/ContactsPage.vue"),
 				breadcrumb: 'Контакты'
+			},
+			{
+				path: "favorites",
+				name: "FavoritesPage",
+				component: () => import("../views/favoritePage/FavoritePage.vue"),
+				breadcrumb: 'Избранное'
 			}
 		]
 	},

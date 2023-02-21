@@ -1,6 +1,6 @@
 <template>
 	<li  class="products-item">
-		<div class="products-item__add-favorite" @click="addFavorite">
+		<div class="products-item__add-favorite" @click="addFavorite" v-if="favoriteIcon">
 			<img src="@/assets/img/svg/compliteAddFavorit.svg" alt="" v-if="isFavorite">
 			<img src="@/assets/img/svg/addFavorit.svg" alt="" v-else>
 		</div>
@@ -27,6 +27,16 @@ const props = defineProps({
 		type: String,
 		required: true,
 	},
+	id:
+	{
+		type: Number,
+		required: true,
+	},
+	favoriteIcon:
+	{
+		type: Boolean,
+		default: false,
+	}
 });
 const emit = defineEmits(['addFavorite']);
 
@@ -35,7 +45,7 @@ const isFavorite = ref(false);
 function addFavorite()
 {
 	isFavorite.value = !isFavorite.value;
-	emit('addFavorite');
+	emit('addFavorite', isFavorite.value, props.id);
 }
 
 </script>

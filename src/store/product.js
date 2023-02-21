@@ -66,6 +66,7 @@ export const useProductStore = defineStore('productId',{
 					img: "@/assets/img/ProductImage-1.png",
 				},
 			],
+			favoriteList: [],
 		};
 	},
 	getters:{
@@ -73,5 +74,16 @@ export const useProductStore = defineStore('productId',{
 			return state.productList;
 		}
 	},
-	actions: {},
+	actions: {
+		addToFavorite(id)
+		{
+			console.log(id);
+			let product = this.productList.find((item) => item.id === id);
+			this.favoriteList.push(product);
+		},
+		removeFromFavorite(id)
+		{
+			this.favoriteList = this.favoriteList.filter((item) => item.id !== id);
+		}
+	},
 });
