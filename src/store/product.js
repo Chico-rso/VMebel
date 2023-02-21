@@ -70,23 +70,33 @@ export const useProductStore = defineStore('productId',{
 			favoriteList: [],
 		};
 	},
-	getters:{
-		getProductList(state){
+	getters:
+	{
+		getProductList(state)
+		{
 			return state.productList;
 		}
 	},
-	actions: {
+	actions:
+	{
+		initProducts()
+		{
+			const favoriteList = useCookies().cookies.get('favoriteList');
+			if (favoriteList)
+			{
+				this.favoriteList = JSON.parse(favoriteList);
+			}
+		},
 		addToFavorite(id)
 		{
-			console.log(id);
-			let product = this.productList.find((item) => item.id === id);
+			const product = this.productList.find((item) => item.id === id);
 			this.favoriteList.push(product);
-			useCookies().cookies.set('favorite', JSON.stringify(this.favoriteList));
+			useCookies().cookies.set('favoriteList', JSON.stringify(this.favoriteList));
 		},
 		removeFromFavorite(id)
 		{
 			this.favoriteList = this.favoriteList.filter((item) => item.id !== id);
-			useCookies().cookies.remove('favorite', JSON.stringify(this.favoriteList).includes(id));
+			useCookies().cookies.set('favoriteList', JSON.stringify(this.favoriteList));
 		}
 	},
 });

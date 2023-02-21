@@ -49,17 +49,19 @@ function addFavorite()
 }
 onMounted(() =>
 {
-	let products = useCookies().cookies.get('favorite');
+	let products = useCookies().cookies.get('favoriteList');
 	if(products)
 	{
 		products = JSON.parse(products);
-		console.log(products);
-
-		if(products.includes(props.id))
+		products.find((item) =>
 		{
-			isFavorite.value = true;
-		}
+			if(item.id === props.id)
+			{
+				isFavorite.value = true;
+			}
+		});
 	}
+
 });
 </script>
 

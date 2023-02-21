@@ -5,6 +5,14 @@
 </template>
 
 <script setup>
+import {onMounted} from "vue";
+import { useProductStore } from "@/store/product";
+
+
+onMounted(() =>
+{
+	useProductStore().initProducts();
+});
 </script>
 
 <style lang="scss">
