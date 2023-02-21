@@ -1,7 +1,7 @@
 <template>
 	<ul class="products-list">
 		<ProductsItem
-			v-if="!props.favorite"
+			v-if="!favorite"
 			v-for="product in productsStore.productList"
 	        :key="product.id"
 			:title="product.title"
@@ -11,7 +11,7 @@
 			@addFavorite="addFavorite"
 		/>
 		<ProductsItem
-			v-if="props.favorite"
+			v-if="favorite"
 			v-for="product in productsStore.favoriteList"
 	        :key="product.id"
 			:title="product.title"

@@ -14,7 +14,8 @@
 </template>
 
 <script setup>
-import {ref} from "vue";
+import {onMounted, ref} from "vue";
+import {useCookies} from "vue3-cookies";
 
 const props = defineProps({
 	title:
@@ -41,13 +42,25 @@ const props = defineProps({
 const emit = defineEmits(['addFavorite']);
 
 const isFavorite = ref(false);
-
 function addFavorite()
 {
 	isFavorite.value = !isFavorite.value;
 	emit('addFavorite', isFavorite.value, props.id);
 }
+onMounted(() =>
+{
+	let products = useCookies().cookies.get('favorite');
+	if(products)
+	{
+		products = JSON.parse(products);
+		console.log(products);
 
+		if(products.includes(props.id))
+		{
+			isFavorite.value = true;
+		}
+	}
+});
 </script>
 
 <style lang="scss">

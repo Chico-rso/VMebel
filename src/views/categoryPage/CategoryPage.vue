@@ -59,12 +59,10 @@ function addFavorite(value, key)
 	if(value)
 	{
 		productsStore.addToFavorite(key);
-		// useCookies().set('favorite', productsStore.favoriteList);
 	}
 	else
 	{
 		productsStore.removeFromFavorite(key);
-		// useCookies().remove('favorite', productsStore.favoriteList);
 	}
 }
 
