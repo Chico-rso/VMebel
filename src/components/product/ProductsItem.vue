@@ -1,5 +1,9 @@
 <template>
 	<li  class="products-item">
+		<div class="products-item__add-favorite" @click="addFavorite">
+			<img src="@/assets/img/svg/compliteAddFavorit.svg" alt="" v-if="isFavorite">
+			<img src="@/assets/img/svg/addFavorit.svg" alt="" v-else>
+		</div>
 		<router-link to="#">
 			<div class="products-item__img">
 				<img src="@/assets/img/ProductImage-1.png" alt="">
@@ -10,6 +14,8 @@
 </template>
 
 <script setup>
+import {ref} from "vue";
+
 const props = defineProps({
 	title:
 	{
@@ -22,6 +28,15 @@ const props = defineProps({
 		required: true,
 	},
 });
+const emit = defineEmits(['addFavorite']);
+
+const isFavorite = ref(false);
+
+function addFavorite()
+{
+	isFavorite.value = !isFavorite.value;
+	emit('addFavorite');
+}
 
 </script>
 
