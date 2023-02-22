@@ -22,6 +22,7 @@
 			:img="product.img"
 			:id="product.id"
 			:favoriteIcon="favoriteIcon"
+			@addFavorite="addFavorite"
 		/>
 	</ul>
 </template>

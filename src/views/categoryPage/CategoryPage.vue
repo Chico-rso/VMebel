@@ -34,7 +34,6 @@ import CategoryFilter from "@/views/categoryPage/components/categoryFilter/Categ
 import { useProductStore } from "@/store/product";
 
 import {ref, onMounted} from "vue";
-import {useCookies} from "vue3-cookies";
 
 let openCategoryFilter = ref(false);
 let favorite = ref(false);
