@@ -10,6 +10,16 @@ import { useCookies } from "vue3-cookies";
 
 const pinia = createPinia();
 const app = createApp(App).directive("maska", vMaska);
+
+router.beforeEach((to, from, next) => {
+  if (to.matched.length === 0) {
+    next('/not-found');
+  } else {
+    next()
+  }
+})
+
+
 app.use(router);
 app.use(pinia);
 app.use(useCookies);

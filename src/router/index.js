@@ -1,4 +1,5 @@
 import {createRouter, createWebHistory} from "vue-router";
+import {NotFoundPage} from "@/views/notFoundPage/NotFoundPage.vue";
 
 const routes = [
 	{
@@ -42,12 +43,12 @@ const routes = [
 		component: () => import("../layout/PageNotLayout.vue"),
 		children: [
 			{
-				path: "/not-found",
+				path: '/:pathMatch(.*)*',
 				name: "NotFoundPage",
 				component: () => import("../views/notFoundPage/NotFoundPage.vue")
 			}
 		],
-	}
+	},
 ];
 
 const router = createRouter({
