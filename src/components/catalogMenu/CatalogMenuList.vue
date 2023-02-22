@@ -74,8 +74,6 @@ const catalogArr = ref([
 
 function cycleChildren(item)
 {
-	console.log(item.children);
-
 	if (item.children)
 	{
 		item.isOpen = true;

@@ -8,11 +8,6 @@
 		@mouseleave="closeChildren(child)"
 	>
 		<li
-			class="catalog-menu-list__ul"
-			v-for="grandchild in child.children"
-			:key="grandchild.id"
-			@mouseover="cycleChildren(grandchild)"
-			@mouseleave="closeChildren(grandchild)"
 		>
 			<RouterLink to="#">
 				{{ child.name }}
@@ -22,7 +17,11 @@
 				>
 			</RouterLink>
 			<ul class="catalog-menu-list-item__grandchild"
-			    v-if="grandchild.isOpen"
+				v-if="child.isOpen"
+				v-for="grandchild in child.children"
+				:key="grandchild.id"
+				@mouseover="cycleChildren(grandchild)"
+				@mouseleave="closeChildren(grandchild)"
 			>
 				<li
 					class="catalog-menu-list-item__great-grandchild"
@@ -37,7 +36,7 @@
 						>
 					</RouterLink>
 					<ul
-						v-if="greatGrandchild.isOpen"
+						v-if="grandchild.isOpen"
 					>
 						<li>
 							<RouterLink to="#">
