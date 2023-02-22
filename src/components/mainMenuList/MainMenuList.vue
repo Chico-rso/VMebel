@@ -7,7 +7,7 @@
 			<li
 				class="main-menu-list__title"
 			>
-				<router-link to="#">
+				<router-link to="/category/1">
 					Диваны и кресла
 				</router-link>
 			</li>

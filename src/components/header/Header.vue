@@ -73,7 +73,7 @@
 							</router-link>
 						</li>
 						<li>
-							<router-link to="#" class="header__bottom-favorit">
+							<router-link to="/favorites" class="header__bottom-favorit">
 								<img src="@/assets/img/svg/header/favoritIcon.svg" alt="">
 								<span>Избранное</span>
 							</router-link>
