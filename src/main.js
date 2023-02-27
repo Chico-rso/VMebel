@@ -12,12 +12,12 @@ const pinia = createPinia();
 const app = createApp(App).directive("maska", vMaska);
 
 router.beforeEach((to, from, next) => {
-  if (to.matched.length === 0) {
-    next('/not-found');
-  } else {
-    next()
-  }
-})
+	if (to.matched.length === 0) {
+		next('/not-found');
+	} else {
+		next()
+	}
+});
 
 
 app.use(router);
