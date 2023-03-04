@@ -5,15 +5,22 @@
 	align-items: center;
 	justify-content: center;
 	flex-direction: column;
+	img
+	{
+		width: 100%;
+		height: auto;
+	}
 }
 .about-page__poster
 {
 	position: relative;
 	width: 100%;
+	margin-bottom: 20px;
 	img
 	{
 		width: 100%;
 		height: auto;
+		object-fit: cover;
 	}
 }
 .about-page__btn
@@ -39,7 +46,7 @@
 	display: flex;
 	justify-content: space-between;
 	flex-direction: column;
-
+	margin-bottom: 20px;
 }
 .about-page__profit-list
 {
@@ -91,6 +98,32 @@
 		color: #6C6C6C;
 	}
 	p:last-of-type
+	{
+		font-weight: 300;
+		font-size: 12px;
+		line-height: 14px;
+		color: #000000;
+	}
+}
+.about-page__sale{margin-bottom: 20px;}
+.about-page__sale-descrip
+{
+	margin-bottom: 20px;
+	h3
+	{
+		font-weight: 500;
+		font-size: 28px;
+		line-height: 36px;
+		color: #6C6C6C;
+	}
+	span
+	{
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 18px;
+		color: #6C6C6C;
+	}
+	p
 	{
 		font-weight: 300;
 		font-size: 12px;
