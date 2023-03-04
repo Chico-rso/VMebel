@@ -9,16 +9,40 @@
 .about-page__poster
 {
 	position: relative;
-	height: 582px;
 	width: 100%;
+	img
+	{
+		width: 100%;
+		height: auto;
+	}
 }
 .about-page__btn
 {
 	position: absolute;
 	top: 50%;
 	transform: translateY(-50%);
-	left: 102px;
+	left: 10px;
 	display: flex;
 	flex-direction: column;
-	button{line-height: 74px;}
+	justify-content: center;
+	align-items: center;
+	button
+	{
+		line-height: 29px;
+		padding: 0 15px;
+		font-size: 10px;
+	}
+	img{width: 80px;}
+}
+.about-page__profit
+{
+	display: flex;
+	justify-content: space-between;
+	flex-direction: column;
+
+}
+.about-page__profit-list
+{
+	column-count: 2;
+	flex-basis: 119%;
 }

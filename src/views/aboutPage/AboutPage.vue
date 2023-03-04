@@ -9,7 +9,7 @@
 			</div>
 		</div>
 		<div class="about-page__profit">
-			<ul>
+			<ul class="about-page__profit-list">
 				<li>
 					<img src="@/assets/img/svg/aboutProfit1.svg" alt="">
 					<span>Гарантия лучших цен</span>
