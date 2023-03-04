@@ -10,19 +10,19 @@
 		</div>
 		<div class="about-page__profit">
 			<ul class="about-page__profit-list">
-				<li>
+				<li class="about-page__profit-item">
 					<img src="@/assets/img/svg/aboutProfit1.svg" alt="">
 					<span>Гарантия лучших цен</span>
 				</li>
-				<li>
+				<li class="about-page__profit-item">
 					<img src="@/assets/img/svg/aboutProfit2.svg" alt="">
 					<span>Бонусы за каждый отзыв</span>
 				</li>
-				<li>
+				<li class="about-page__profit-item">
 					<img src="@/assets/img/svg/aboutProfit3.svg" alt="">
 					<span>Кэшбек до 25% на всё</span>
 				</li>
-				<li>
+				<li class="about-page__profit-item">
 					<img src="@/assets/img/svg/aboutProfit4.svg" alt="">
 					<span>Как копить и получать бонусы</span>
 				</li>
