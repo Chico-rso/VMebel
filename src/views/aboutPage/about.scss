@@ -185,3 +185,32 @@
 		color: #000000;
 	}
 }
+
+@media(min-width: 768px)
+{
+	.about-page__btn
+	{
+		left: 30px;
+		button
+		{
+			line-height: 42px;
+			padding: 0 20px;
+			font-size: 14px;
+		}
+		img{width: 120px;}
+	}
+	.about-page__profit-item
+	{
+		span{font-size: 14px;}
+	}
+	.about-page__delivery-item
+	{
+		span{font-size: 14px;}
+		&:first-of-type{align-self: flex-start;}
+		&:last-of-type
+		{
+			align-self: flex-end;
+			width: 372px;
+		}
+	}
+}
