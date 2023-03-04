@@ -48,7 +48,29 @@
 				<img src="@/assets/img/sale1.png" alt="">
 			</div>
 		</div>
-
+		<div class="about-page__delivery">
+			<ul class="about-page__delivery-list">
+				<li class="about-page__delivery-item">
+					<img src="@/assets/img/svg/aboutDelivery1.svg" alt="">
+					<span>Доставка от 1 рубля удобным для вас способом</span>
+				</li>
+				<li class="about-page__delivery-item">
+					<img src="@/assets/img/svg/aboutDelivery2.svg" alt="">
+					<span>Как копить и получать бонусы</span>
+				</li>
+			</ul>
+			<div class="about-page__delivery-descrip">
+				<h3>C нами удобно</h3>
+				<p>Не переплачивайте за комфорт</p>
+				<p>
+					Комбинируйте заказы из товаров разных категорий и продавцов,
+					не переплачивая за доставку. Кроме того вы можете позволить
+					себе необходимую покупку или подарок уже сейчас,
+					а выплачивать его стоимость в течение нескольких месяцев
+					равными суммами без переплат.
+				</p>
+			</div>
+		</div>
 	</div>
 </template>
 
