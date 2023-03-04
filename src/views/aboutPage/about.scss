@@ -115,14 +115,14 @@
 		line-height: 36px;
 		color: #6C6C6C;
 	}
-	span
+	p:first-of-type
 	{
 		font-weight: 400;
 		font-size: 14px;
 		line-height: 18px;
 		color: #6C6C6C;
 	}
-	p
+	p:last-of-type
 	{
 		font-weight: 300;
 		font-size: 12px;
@@ -213,4 +213,33 @@
 			width: 372px;
 		}
 	}
+}
+@media (min-width: 1024px)
+{
+	.about-page__profit
+	{
+		flex-direction: row;
+		gap: 20px;
+	}
+	.about-page__descrip
+	{
+		h3{margin-top: 0;}
+	}
+	.about-page__delivery
+	{
+		display: flex;
+		gap: 20px;
+	}
+	.about-page__sale
+	{
+		display: flex;
+		gap: 20px;
+	}
+	.about-page__sale-descrip
+	{
+		flex-basis: 50%;
+		p{margin-bottom: 20px;}
+	}
+	.about-page__delivery-list{flex-basis: 60%;}
+	.about-page__delivery-descrip{flex-basis: 40%;}
 }
