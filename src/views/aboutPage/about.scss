@@ -4,4 +4,21 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	flex-direction: column;
+}
+.about-page__poster
+{
+	position: relative;
+	height: 582px;
+	width: 100%;
+}
+.about-page__btn
+{
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	left: 102px;
+	display: flex;
+	flex-direction: column;
+	button{line-height: 74px;}
 }
