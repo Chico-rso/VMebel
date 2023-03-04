@@ -48,7 +48,7 @@
 				<img src="@/assets/img/sale1.png" alt="">
 			</div>
 		</div>
-		<div class="about-page__delivery">
+		<div class="about-page__delivery"   >
 			<ul class="about-page__delivery-list">
 				<li class="about-page__delivery-item">
 					<img src="@/assets/img/svg/aboutDelivery1.svg" alt="">

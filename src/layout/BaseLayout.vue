@@ -25,7 +25,7 @@
 	<div class="base-layout">
 		<div class="container">
 			<router-link
-				v-if="$route.name !== 'MainPage'"
+				v-if="$route.name !== 'MainPage' && $route.name !== 'AboutPage'"
 				class="base-layout__back"
 				to="/"
 			>
@@ -33,7 +33,7 @@
 				<p>Назад</p>
 			</router-link>
 			<Breadcrumbs
-				v-if="$route.name !== 'MainPage' && $route.name !== 'AboutPage' && $route.name !== 'ContactsPage'"
+				v-if="$route.name !== 'MainPage'  && $route.name !== 'ContactsPage'"
 				:crumbs="crumbs"
 			/>
 			<router-view/>
