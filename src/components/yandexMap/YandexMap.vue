@@ -4,10 +4,10 @@
 		:zoom="zoom"
 		:controls="controls"
 	>
-<!--		<YandexMarker-->
-<!--			:coordinates="coords"-->
-<!--			:properties="{ iconContent: 'Метка' }"-->
-<!--		></YandexMarker>-->
+		<YandexMarker
+			:coordinates="coords"
+			:marker-id="123"
+		></YandexMarker>
 	</YandexMap>
 </template>
 
