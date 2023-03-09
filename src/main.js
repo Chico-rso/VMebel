@@ -6,6 +6,7 @@ import { vMaska } from "maska";
 import { createPinia } from 'pinia';
 import Slider from '@vueform/slider';
 import { useCookies } from "vue3-cookies";
+import YmapPlugin from 'vue-yandex-maps'
 
 
 const pinia = createPinia();
@@ -23,6 +24,15 @@ router.beforeEach((to, from, next) => {
 app.use(router);
 app.use(pinia);
 app.use(useCookies);
+app.use(YmapPlugin, {
+	settings: {
+		apiKey: 'abd79a0d-60f0-4eac-bcd6-95db1c7cdd1c', // Индивидуальный ключ API
+		lang: 'ru_RU', // Используемый язык
+		coordorder: 'latlong', // Порядок задания географических координат
+		debug: false, // Режим отладки
+		version: '2.1' // Версия Я.Карт
+	}
+})
 
 components.forEach(component =>
 {
