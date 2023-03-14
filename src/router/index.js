@@ -34,6 +34,12 @@ const routes = [
 				name: "FavoritesPage",
 				component: () => import("../views/favoritePage/FavoritePage.vue"),
 				breadcrumb: 'Избранное'
+			},
+			{
+				path: "detail",
+				name: "DetailPage",
+				component: () => import("../views/detailPage/DetailPage.vue"),
+				breadcrumb: 'Детальная страница'
 			}
 		]
 	},

@@ -6,7 +6,7 @@ import { vMaska } from "maska";
 import { createPinia } from 'pinia';
 import Slider from '@vueform/slider';
 import { useCookies } from "vue3-cookies";
-import YmapPlugin from 'vue-yandex-maps'
+import YmapPlugin from 'vue-yandex-maps';
 
 
 const pinia = createPinia();
@@ -33,7 +33,6 @@ app.use(YmapPlugin, {
 		version: '2.1' // Версия Я.Карт
 	}
 })
-
 components.forEach(component =>
 {
 	app.component(component.name, component);
