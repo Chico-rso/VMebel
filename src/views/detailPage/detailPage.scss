@@ -17,3 +17,52 @@
 	}
 }
 .detail-page__slider{margin-bottom: 20px;}
+.detail-page__shops
+{
+	padding: 25px 15px 30px 15px;
+	border: 1px solid #EAEAEA;
+	border-radius: 20px;
+	p
+	{
+		margin-bottom: 26px;
+		font-weight: 500;
+		font-size: 14px;
+		line-height: 16px;
+		text-transform: uppercase;
+		color: #969696;
+	}
+}
+.detail-page__shops-btn
+{
+	width: 100%;
+	background: #FEDAD9;
+	border-radius: 10px;
+	font-weight: 500;
+	font-size: 14px;
+	line-height: 44px;
+	color: #FC4442;
+	border: none;
+}
+.detail-page__shops-list{margin-bottom: 25px;}
+.detail-page__shops-item
+{
+	.accordion__title
+	{
+		span:first-of-type
+		{
+			display: block;
+			margin-bottom: 5px;
+			font-weight: 500;
+			font-size: 16px;
+			line-height: 19px;
+			color: #2D2D2D;
+		}
+		span:last-of-type
+		{
+			font-weight: 500;
+			font-size: 14px;
+			line-height: 16px;
+			color: #6C6C6C;
+		}
+	}
+}

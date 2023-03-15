@@ -4,9 +4,14 @@
 			class="accordion__header"
 			:class="{'accordion__header-open': isOpenAccordion }"
 			@click="isOpenAccordion = !isOpenAccordion">
-			<span>
-				{{ title }}
-			</span>
+			<div class="accordion__title">
+				<span>
+					{{ title }}
+				</span>
+				<span>
+					{{subTitle}}
+				</span>
+			</div>
 			<img src="@/assets/img/svg/arrow-up.svg" alt="">
 		</div>
 		<transition name="accordion__animate">
@@ -23,6 +28,11 @@ import {ref} from "vue";
 
 const props = defineProps({
 	title:
+	{
+		type: String,
+		required: true
+	},
+	subTitle:
 	{
 		type: String,
 		required: true
