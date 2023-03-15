@@ -1,12 +1,14 @@
 <template>
 	<div class="detail-page">
-		<SwiperSlider />
+		<div class="detail-page__slider">
+			<SliderCarousel />
+		</div>
 	</div>
 </template>
 
 <script setup>
 
-import SwiperSlider from "@/components/swiperSlider/SwiperSlider.vue";
+import SliderCarousel from "@/components/sliderCarousel/SliderCarousel.vue";
 </script>
 
 <style lang="scss">
