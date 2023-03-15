@@ -1,6 +1,28 @@
-.carousel__prev
+.slide-carousel
 {
-	background: #2D2D2D;
-	border-radius: 100px;
-	color: #FFFFFF;
+	.carousel__prev,
+	.carousel__next
+	{
+		background: #2D2D2D;
+		border-radius: 100px;
+		color: #FFFFFF;
+	}
+	.carousel__prev:hover, .carousel__next:hover{color: #ABABAB;}
+	.carousel__slide
+	{
+		height: 370px;
+		img
+		{
+			height: auto;
+			width: 100%;
+			object-fit: contain;
+		}
+	}
+	.carousel__pagination{padding-left: 0;}
+	.carousel__pagination-button::after
+	{
+		border-radius: 50%;
+		height: 8px;
+		width: 8px;
+	}
 }
