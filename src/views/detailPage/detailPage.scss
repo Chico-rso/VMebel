@@ -146,3 +146,31 @@
 	}
 	&:last-of-type{margin-bottom: 0;}
 }
+@media (min-width: 768px)
+{
+	.detail-page__top
+	{
+		margin-bottom: 40px;
+		h3
+		{
+			font-weight: 700;
+			font-size: 26px;
+			line-height: 30px;
+		}
+		span
+		{
+			font-size: 14px;
+			line-height: 16px;
+		}
+	}
+	.detail-page__shops,
+	.detail-page__tabs-content,
+	.detail-page__specifications,
+	.detail-page__slider{margin-bottom: 40px;}
+	.detail-page__tabs{margin-bottom: 30px;}
+	.detail-page__tabs-list
+	{
+		justify-content: flex-start;
+		gap: 50px;
+	}
+}
