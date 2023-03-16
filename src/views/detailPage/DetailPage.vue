@@ -81,6 +81,17 @@
 				</li>
 			</ul>
 		</div>
+		<div class="detail-page__specifications">
+			<h3>Характеристики</h3>
+			<ul class="detail-page__specifications-list">
+				<li class="detail-page__specifications-item"
+					v-for="(specification, index) in specifications"
+					:key="index"
+				>
+					<span>{{ specification.first }}</span> <span></span> <span>{{ specification.second }}</span>
+				</li>
+			</ul>
+		</div>
 	</div>
 </template>
 
@@ -116,7 +127,33 @@ const tabContent = [
 		content: "example2",
 	},
 ];
+const specifications = [
+	{
+		first: 'Коллекция',
+		second: 'Vivianne',
+	},
+	{
+		first: 'Производитель',
+		second: 'Китай',
+	},
+	{
+		first: 'Гарантия',
+		second: '24 мес.',
+	},
+	{
+		first: 'Срок службы',
+		second: 'Год: 5',
+	},
+	{
+		first: 'Размеры кресла (ШхВхГ)',
+		second: '54 х 107 х 65 см',
+	},
+	{
+		first: 'Цвет',
+		second: 'серый',
+	}
 
+]
 const changeTab = (index) =>
 {
 	activeTab.value = index;
