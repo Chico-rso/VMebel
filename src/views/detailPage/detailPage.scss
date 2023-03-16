@@ -20,6 +20,7 @@
 .detail-page__shops
 {
 	padding: 25px 15px 30px 15px;
+	margin-bottom: 20px;
 	border: 1px solid #EAEAEA;
 	border-radius: 20px;
 	p
@@ -64,5 +65,33 @@
 			line-height: 16px;
 			color: #6C6C6C;
 		}
+	}
+}
+.detail-page__tabs
+{
+	padding: 25px;
+	margin-bottom: 20px;
+	border: 1px solid #EAEAEA;
+	border-radius: 10px;
+}
+.detail-page__tabs-list
+{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+.detail-page__tabs-item
+{
+	a
+	{
+		font-weight: 500;
+		font-size: 12px;
+		line-height: 14px;
+		text-align: center;
+		color: #969696;
+	}
+	&--active
+	{
+		a{color: #2D2D2D;}
 	}
 }

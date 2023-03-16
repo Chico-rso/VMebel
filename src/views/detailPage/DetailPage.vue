@@ -55,13 +55,44 @@
 				Показать все магазины
 			</button>
 		</div>
+		<div class="detail-page__tabs">
+			<ul class="detail-page__tabs-list">
+				<li
+					class="detail-page__tabs-item"
+					:class="{' detail-page__tabs-item--active': activeTab === index}"
+					v-for="(tab, index) in tabs"
+					:key="index"
+					@click="changeTab(index)"
+				>
+					<a href="">{{ tab.title }}</a>
+				</li>
+			</ul>
+		</div>
 	</div>
 </template>
 
 <script setup>
-
 import SliderCarousel from "@/components/sliderCarousel/SliderCarousel.vue";
 import Accordion from "@/components/accordion/Accordion.vue";
+import { ref } from "vue";
+
+const activeTab = ref(0);
+
+const tabs = [
+	{
+		title: "О товаре",
+	},
+	{
+		title: "Магазины",
+	},
+	{
+		title: "Характеристики",
+	},
+];
+
+const changeTab = (index) => {
+	activeTab.value = index;
+};
 </script>
 
 <style lang="scss">
