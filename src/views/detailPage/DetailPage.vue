@@ -5,7 +5,7 @@
 			<span>Артикул 100 024 215 307</span>
 		</div>
 		<div class="detail-page__slider">
-			<SliderCarousel />
+			<SliderCarousel/>
 		</div>
 		<div class="detail-page__shops">
 			<p>Магазины с данным товаром</p>
@@ -13,7 +13,7 @@
 				<li class="detail-page__shops-item">
 					<accordion
 						title="Johnson & Johnson"
-					    sub-title="ул. К. Либкнехта, д. 2, г."
+						sub-title="ул. К. Либкнехта, д. 2, г."
 					>
 						example
 					</accordion>
@@ -62,9 +62,22 @@
 					:class="{' detail-page__tabs-item--active': activeTab === index}"
 					v-for="(tab, index) in tabs"
 					:key="index"
-					@click="changeTab(index)"
+					@click.prevent="changeTab(index)"
 				>
 					<a href="">{{ tab.title }}</a>
+				</li>
+			</ul>
+		</div>
+		<div class="detail-page__tabs-content">
+			<ul class="detail-page__tabs-content-list">
+				<li
+					class="detail-page__tabs-content-item"
+					:class="{' detail-page__tabs-content-item--active': activeTab === index}"
+					v-for="(content, index) in tabContent"
+					:key="index"
+				>
+					<h3>{{ content.title }}</h3>
+					<p>{{ content.content }}</p>
 				</li>
 			</ul>
 		</div>
@@ -74,7 +87,7 @@
 <script setup>
 import SliderCarousel from "@/components/sliderCarousel/SliderCarousel.vue";
 import Accordion from "@/components/accordion/Accordion.vue";
-import { ref } from "vue";
+import {ref} from "vue";
 
 const activeTab = ref(0);
 
@@ -89,8 +102,23 @@ const tabs = [
 		title: "Характеристики",
 	},
 ];
+const tabContent = [
+	{
+		title: "Кресло рабочее Vivianne",
+		content: "Кресло Vivianne с сеточным каркасом сиденья и спинки поддерживает удобную рабочую позу на протяжении длительного времени. Лаконичный дизайн модели выдержан в стиле минимализма, подходящего для эргономичного офисного пространства. Форма спинки разработана с учетом анатомических особенностей позвоночника. Механизм качания и регулировка высоты сиденья дают возможность выбрать оптимальное положение для пользователя. За счет небольшого веса модели и стойки на колесах кресло можно свободно передвинуть в нужном направлении.",
+	},
+	{
+		title: "example1",
+		content: "example1",
+	},
+	{
+		title: "example2",
+		content: "example2",
+	},
+];
 
-const changeTab = (index) => {
+const changeTab = (index) =>
+{
 	activeTab.value = index;
 };
 </script>
