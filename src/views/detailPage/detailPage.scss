@@ -174,3 +174,18 @@
 		gap: 50px;
 	}
 }
+@media (min-width: 1440px)
+{
+	.detail-page__flex-wrap
+	{
+		display: flex;
+		gap: 22px;
+	}
+	.detail-page__slider
+	{
+		width: 100%;
+		max-width: 778px;
+	}
+	.detail-page__shops{flex: 1}
+	.detail-page__specifications{max-width: 977px;}
+}
