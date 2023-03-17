@@ -10,7 +10,6 @@
 	.carousel__prev:hover, .carousel__next:hover{color: #ABABAB;}
 	.carousel__slide
 	{
-		height: 370px;
 		img
 		{
 			height: auto;
@@ -18,11 +17,24 @@
 			object-fit: contain;
 		}
 	}
+	.carousel__track{padding-bottom: 12px;}
 	.carousel__pagination{padding-left: 0;}
 	.carousel__pagination-button::after
 	{
 		border-radius: 50%;
 		height: 8px;
 		width: 8px;
+	}
+	.carousel:nth-child(2)
+	{
+		display: none;
+		.carousel__track{gap: 20px;}
+	}
+}
+@media (min-width: 768px)
+{
+	.slide-carousel
+	{
+		.carousel:nth-child(2){display: flex;}
 	}
 }

@@ -1,26 +1,35 @@
 <template>
 	<div class="slide-carousel">
-		<carousel
-			:items-to-show="1"
-		>
-	<!--		:autoplay="3000"-->
-	<!--		:wrap-around="true"-->
-			<slide v-for="slide in slides" :key="slide.id">
+		<Carousel id="gallery" :items-to-show="1" :wrap-around="false" v-model="currentSlide">
+			<Slide v-for="slide in slides" :key="slide">
 				<img :src="slide.img" alt="">
-			</slide>
+			</Slide>
+		</Carousel>
 
-			<template #addons>
-				<navigation/>
-				<pagination/>
-			</template>
-		</carousel>
+		<Carousel
+			id="thumbnails"
+			:items-to-show="4"
+			:wrap-around="true"
+			v-model="currentSlide"
+			ref="carousel"
+		>
+			<Slide v-for="slide in slides" :key="slide">
+				<img
+					:src="slide.img"
+					alt=""
+					class="carousel__item"
+				>
+			</Slide>
+		</Carousel>
 	</div>
 </template>
 
 <script setup>
 import "vue3-carousel/dist/carousel.css";
 import {Carousel, Slide, Pagination, Navigation} from "vue3-carousel";
+import {ref} from "vue";
 
+let currentSlide = ref(0)
 let slides = [
 	{
 		id: 1,
@@ -42,7 +51,11 @@ let slides = [
 		title: "Slide 4",
 		img: "https://picsum.photos/1024/768",
 	},
-]
+];
+function slideTo(val)
+{
+	currentSlide.value = val;
+}
 </script>
 
 <style lang="scss">
